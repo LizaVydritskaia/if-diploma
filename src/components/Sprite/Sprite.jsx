@@ -62,6 +62,81 @@ export const Sprite = () => {
           d="M67.401 55.644h-2.688v-3.82a2.201 2.201 0 0 0-2.202-2.201H44.588a2.201 2.201 0 0 0-2.201 2.201v3.82h-2.69a2.201 2.201 0 0 0-2.2 2.201v34.506c0 4.218 3.43 7.649 7.649 7.649h16.808c4.218 0 7.65-3.431 7.65-7.65V57.846a2.202 2.202 0 0 0-2.203-2.201ZM46.79 54.026h13.52v1.618H46.79v-1.618ZM65.2 92.351a3.25 3.25 0 0 1-3.246 3.246H45.145a3.25 3.25 0 0 1-3.246-3.246V60.046h23.3l.001 32.305ZM29.905 60.845h-2.689V28.43a2.201 2.201 0 0 0-2.2-2.201h-.288V10.242c0-.093-.006-2.314-.583-4.567C22.88.738 20.01 0 18.41 0c-2.011 0-4.178 1.81-7.246 6.051-1.898 2.624-3.419 5.206-3.483 5.315a2.2 2.2 0 0 0-.303 1.115v13.747h-.287a2.201 2.201 0 0 0-2.201 2.202v32.415h-2.69A2.201 2.201 0 0 0 0 63.044V92.35C0 96.568 3.431 100 7.65 100h16.807c4.218 0 7.65-3.432 7.65-7.65V63.046a2.202 2.202 0 0 0-2.202-2.201Zm-18.123-47.76c2.51-4.175 5.545-8.074 6.754-8.668 1.07.244 1.782 3.59 1.79 5.826v15.986h-8.544V13.085ZM9.293 30.632h13.52v30.214H9.294V30.63Zm18.41 61.72a3.25 3.25 0 0 1-3.246 3.246H7.65a3.25 3.25 0 0 1-3.246-3.246V65.248h23.3V92.35Z"
         />
       </symbol>
+      <symbol id="like" viewBox="0 0 62 56">
+        <path
+          fill="#fff"
+          d="M43.74 0c-2.878 0-5.63.66-8.177 1.962A18.139 18.139 0 0 0 30.87 5.42a18.14 18.14 0 0 0-4.694-3.46A17.804 17.804 0 0 0 17.998 0C8.074 0 0 8.074 0 17.998c0 7.03 3.712 14.495 11.034 22.19 6.113 6.425 13.597 11.78 18.8 15.142l1.036.67 1.036-.67c5.202-3.361 12.686-8.717 18.8-15.142 7.321-7.695 11.033-15.16 11.033-22.19C61.74 8.075 53.665 0 43.741 0Zm4.199 37.556c-5.464 5.742-12.118 10.623-17.07 13.89-4.95-3.267-11.605-8.148-17.068-13.89-6.624-6.961-9.982-13.541-9.982-19.557 0-7.82 6.36-14.18 14.18-14.18 4.5 0 8.636 2.068 11.344 5.673l1.527 2.032 1.526-2.032c2.709-3.605 6.843-5.673 11.345-5.673 7.819 0 14.18 6.36 14.18 14.18 0 6.016-3.359 12.596-9.982 19.557Z"
+        />
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 144 144">
+        <g filter="url(#a)">
+          <g filter="url(#b)">
+            <circle cx="70" cy="70" r="70" fill="#fff" />
+          </g>
+          <path
+            fill="#000F08"
+            d="M60.09 44 54 50.09l19.779 19.82L54 89.734l6.09 6.089L86 69.91 60.09 44Z"
+          />
+        </g>
+        <defs>
+          <filter
+            id="a"
+            width="144"
+            height="144"
+            x="0"
+            y="0"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="2" dy="2" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+            <feBlend
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_1_3233"
+            />
+            <feBlend
+              in="SourceGraphic"
+              in2="effect1_dropShadow_1_3233"
+              result="shape"
+            />
+          </filter>
+          <filter
+            id="b"
+            width="144"
+            height="144"
+            x="0"
+            y="0"
+            colorInterpolationFilters="sRGB"
+            filterUnits="userSpaceOnUse"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              result="hardAlpha"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            />
+            <feOffset dx="2" dy="2" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+            <feBlend
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_1_3233"
+            />
+            <feBlend
+              in="SourceGraphic"
+              in2="effect1_dropShadow_1_3233"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </symbol>
     </svg>
   );
 };

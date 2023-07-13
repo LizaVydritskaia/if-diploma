@@ -1,5 +1,9 @@
 import React from 'react';
+
+//components
 import { Icon } from '../../Icon';
+
+//styles
 import { useHeaderStyles } from './Header.styles';
 
 export const Header = () => {
