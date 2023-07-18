@@ -1,6 +1,10 @@
 import React from 'react';
-import { useTopSectionStyles } from './TopSection.styles';
+
+//components
 import { Header } from '../Header';
+
+//styles
+import { useTopSectionStyles } from './TopSection.styles';
 
 export const TopSection = () => {
   const classes = useTopSectionStyles();
