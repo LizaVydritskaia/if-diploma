@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //components
 import { Icon } from '../../Icon';
@@ -8,6 +9,12 @@ import { useHeaderStyles } from './Header.styles';
 
 export const Header = () => {
   const classes = useHeaderStyles();
+
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
+    navigate('/sign-up');
+  };
 
   return (
     <header className={classes.root}>
@@ -22,7 +29,9 @@ export const Header = () => {
           <Icon className={classes.searchIcon} hrefIconName="#search" />
           <span className={classes.text}>SEARCH</span>
         </div>
-        <span className={classes.text}>SIGN IN</span>
+        <span className={classes.text} onClick={handleSignIn}>
+          SIGN IN
+        </span>
         <span className={classes.text}>BAG (2)</span>
         <Icon className={classes.wishListIcon} hrefIconName="#wish-list" />
       </div>
