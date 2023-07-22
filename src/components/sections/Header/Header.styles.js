@@ -15,9 +15,16 @@ export const headerStyles = {
   logo: {
     width: 470,
     height: 50,
+    fill: '#fff',
+  },
+  logoBlack: {
+    width: 470,
+    height: 50,
+    fill: '#000f08',
   },
   menu: {
     display: 'flex',
+    alignItems: 'center',
     gap: 80,
   },
   text: {
@@ -28,7 +35,17 @@ export const headerStyles = {
     '&:hover': {
       cursor: 'pointer',
       textDecoration: 'underline',
-    }
+    },
+  },
+  textBlack: {
+    fontSize: 24,
+    fontWeight: 400,
+    color: '#000f08',
+
+    '&:hover': {
+      cursor: 'pointer',
+      textDecoration: 'underline',
+    },
   },
   search: {
     display: 'flex',
@@ -38,10 +55,22 @@ export const headerStyles = {
   searchIcon: {
     width: 24,
     height: 24,
+    fill: '#fff',
+  },
+  searchIconBlack: {
+    width: 24,
+    height: 24,
+    fill: '#000f08',
   },
   wishListIcon: {
     width: 27,
     height: 24,
+    fill: '#fff',
+  },
+  wishListIconBlack: {
+    width: 27,
+    height: 24,
+    fill: '#000f08',
   },
 };
 

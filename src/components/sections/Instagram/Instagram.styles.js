@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const instagramStyles = {
+const instagramStyles = {
   root: {
     marginBottom: 180,
   },
@@ -41,4 +41,6 @@ export const instagramStyles = {
   },
 };
 
-export const useInstagramStyles = createUseStyles(instagramStyles);
+export const useInstagramStyles = createUseStyles(instagramStyles, {
+  name: 'Instagram',
+});

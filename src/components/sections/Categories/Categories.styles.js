@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const categoriesStyles = {
+const categoriesStyles = {
   root: {
     display: 'flex',
     justifyContent: '',
@@ -52,4 +52,6 @@ export const categoriesStyles = {
   },
 };
 
-export const useCategoriesStyles = createUseStyles(categoriesStyles);
+export const useCategoriesStyles = createUseStyles(categoriesStyles, {
+  name: 'Categories',
+});

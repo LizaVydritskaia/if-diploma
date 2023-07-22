@@ -1,5 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+//slices
+import { changeStatus } from '../../../store/slices/auth.slice';
+
+//constants
+import { authStatuses } from '../../../services/constants/authStatuses';
+
+//constants
+import { PATH } from '../../../services/constants/paths';
 
 //components
 import { Icon } from '../../Icon';
@@ -11,29 +21,113 @@ export const Header = () => {
   const classes = useHeaderStyles();
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
 
-  const handleSignIn = () => {
-    navigate('/sign-up');
+  const loggedIn = useSelector(
+    (state) => state.auth.status === authStatuses.loggedIn,
+  );
+
+  const SignIn = () => {
+    navigate(PATH.signUp);
+  };
+
+  const SignOut = () => {
+    dispatch(changeStatus(authStatuses.loggedOut));
+    navigate(PATH.index);
   };
 
   return (
     <header className={classes.root}>
       <div className={classes.menu}>
-        <span className={classes.text}>NEW ARRIVALS</span>
-        <span className={classes.text}>SHOP</span>
-        <span className={classes.text}>COLLECTIONS</span>
+        <span
+          className={
+            location.pathname !== PATH.index ? classes.textBlack : classes.text
+          }
+        >
+          NEW ARRIVALS
+        </span>
+        <span
+          className={
+            location.pathname !== PATH.index ? classes.textBlack : classes.text
+          }
+        >
+          SHOP
+        </span>
+        <span
+          className={
+            location.pathname !== PATH.index ? classes.textBlack : classes.text
+          }
+        >
+          COLLECTIONS
+        </span>
       </div>
-      <Icon className={classes.logo} hrefIconName="#logo" />
+      <Link to={PATH.index}>
+        <Icon
+          className={
+            location.pathname !== PATH.index ? classes.logoBlack : classes.logo
+          }
+          hrefIconName="#logo"
+        />
+      </Link>
       <div className={classes.menu}>
         <div className={classes.search}>
-          <Icon className={classes.searchIcon} hrefIconName="#search" />
-          <span className={classes.text}>SEARCH</span>
+          <Icon
+            className={
+              location.pathname !== PATH.index
+                ? classes.searchIconBlack
+                : classes.searchIcon
+            }
+            hrefIconName="#search"
+          />
+          <span
+            className={
+              location.pathname !== PATH.index
+                ? classes.textBlack
+                : classes.text
+            }
+          >
+            SEARCH
+          </span>
         </div>
-        <span className={classes.text} onClick={handleSignIn}>
-          SIGN IN
+        {loggedIn ? (
+          <span
+            className={
+              location.pathname !== PATH.index
+                ? classes.textBlack
+                : classes.text
+            }
+            onClick={SignOut}
+          >
+            SIGN OUT
+          </span>
+        ) : (
+          <span
+            className={
+              location.pathname !== PATH.index
+                ? classes.textBlack
+                : classes.text
+            }
+            onClick={SignIn}
+          >
+            SIGN IN
+          </span>
+        )}
+        <span
+          className={
+            location.pathname !== PATH.index ? classes.textBlack : classes.text
+          }
+        >
+          BAG (2)
         </span>
-        <span className={classes.text}>BAG (2)</span>
-        <Icon className={classes.wishListIcon} hrefIconName="#wish-list" />
+        <Icon
+          className={
+            location.pathname !== PATH.index
+              ? classes.wishListIconBlack
+              : classes.wishListIcon
+          }
+          hrefIconName="#wish-list"
+        />
       </div>
     </header>
   );

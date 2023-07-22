@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const saleStyles = {
-  root: {},
+const saleStyles = {
   productsSaleList: {
     maxWidth: 2466,
     display: 'flex',
@@ -72,4 +71,4 @@ export const saleStyles = {
   },
 };
 
-export const useSaleStyles = createUseStyles(saleStyles);
+export const useSaleStyles = createUseStyles(saleStyles, { name: 'Sale' });

@@ -1,5 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
+import checkboxIcon from '../../../assets/images/checkbox-icon.svg';
+
 const signUpStyles = {
   root: {
     width: '100%',
@@ -27,6 +29,10 @@ const signUpStyles = {
   iconClose: {
     width: 32,
     height: 32,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   form: {
     display: 'flex',
@@ -36,6 +42,8 @@ const signUpStyles = {
     height: 60,
     border: 'none',
     borderBottom: '2px solid #d8d8d8',
+    fontSize: 24,
+    fontWeight: 400,
     marginBottom: 50,
 
     '&:last-child': {
@@ -46,12 +54,67 @@ const signUpStyles = {
       fontWeight: 400,
       color: '#8c8c8c',
     },
+    '&:focus': {
+      outline: 'none',
+    },
+  },
+  checkboxWrapper: {
+    marginBottom: 40,
+    position: 'relative',
+  },
+  checkboxInput: {
+    appearance: 'none',
+    position: 'absolute',
+
+    '&:checked + $checkboxLabel::before': {
+      backgroundColor: '#000f08',
+    },
+    '&:checked + $checkboxLabel::after': {
+      opacity: 1,
+    },
   },
   checkboxLabel: {
     fontSize: 24,
     fontWeight: 400,
     color: '#000f08',
-    marginBottom: 40,
+    display: 'inline-block',
+    paddingLeft: 52,
+    cursor: 'pointer',
+
+    '&::before': {
+      content: '""',
+      display: 'block',
+      width: 32,
+      height: 32,
+      border: '2px solid #000f08',
+      backgroundColor: '#fff',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 1,
+      transition: 'background .1s linear',
+    },
+    '&:hover::before': {
+      cursor: 'pointer',
+      backgroundColor: '#eaeaea',
+    },
+    '&::after': {
+      content: '""',
+      display: 'block',
+      width: 24,
+      height: 18,
+      background: {
+        image: `url(${checkboxIcon})`,
+        repeat: 'no-repeat',
+        size: '24px 18px',
+      },
+      position: 'absolute',
+      top: 9,
+      left: 6,
+      zIndex: 2,
+      opacity: 0,
+      transition: 'opacity .1s linear',
+    },
   },
   privacy: {
     fontSize: 24,
@@ -72,6 +135,10 @@ const signUpStyles = {
     fontWeight: 400,
     color: '#fff',
     margin: '0 auto 60px',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   signInLink: {
     fontSize: 24,
@@ -81,4 +148,6 @@ const signUpStyles = {
   },
 };
 
-export const useSignUpStyles = createUseStyles(signUpStyles);
+export const useSignUpStyles = createUseStyles(signUpStyles, {
+  name: 'Sign Up',
+});
