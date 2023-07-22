@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const footerStyles = {
+const footerStyles = {
   footerList: {
     display: 'flex',
     gap: 310,
@@ -45,4 +45,6 @@ export const footerStyles = {
   },
 };
 
-export const useFooterStyles = createUseStyles(footerStyles);
+export const useFooterStyles = createUseStyles(footerStyles, {
+  name: 'Footer',
+});

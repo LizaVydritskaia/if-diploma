@@ -2,19 +2,27 @@ import React from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
+  Outlet,
   Route,
 } from 'react-router-dom';
 
+//constants
+import { PATH } from '../services/constants/paths';
+
 //components
 import { Home } from '../components/Home';
-import { SystemLayout } from '../components/SystemLayout';
+import { ProductPage } from '../components/ProductPage';
 import { SignUp } from '../components/sections/SignUp';
+import { SystemLayout } from '../components/SystemLayout';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<SystemLayout />}>
-      <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/" element={<Home />} />
+      <Route path={PATH.signUp} element={<SignUp />} />
+      <Route path={PATH.index} element={<Home />} />
+      <Route path={PATH.index} element={<Outlet />}>
+        <Route path="/:id" element={<ProductPage />} />
+      </Route>
     </Route>,
   ),
 );
