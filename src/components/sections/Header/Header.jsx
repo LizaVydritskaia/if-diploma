@@ -27,6 +27,7 @@ export const Header = () => {
   const loggedIn = useSelector(
     (state) => state.auth.status === authStatuses.loggedIn,
   );
+  const bagProductsCount = useSelector((state) => state.bag.productsInBag);
 
   const SignIn = () => {
     navigate(PATH.signUp);
@@ -35,6 +36,10 @@ export const Header = () => {
   const SignOut = () => {
     dispatch(changeStatus(authStatuses.loggedOut));
     navigate(PATH.index);
+  };
+
+  const openBag = () => {
+    navigate(PATH.bag);
   };
 
   return (
@@ -117,8 +122,9 @@ export const Header = () => {
           className={
             location.pathname !== PATH.index ? classes.textBlack : classes.text
           }
+          onClick={openBag}
         >
-          BAG (2)
+          BAG <span>({bagProductsCount.length})</span>
         </span>
         <Icon
           className={

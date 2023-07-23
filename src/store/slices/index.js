@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage';
 import { products } from '../../services/products';
 
 import { authReducer } from './auth.slice';
+import { bagReducer } from './bag.slice';
 
 const persistConfig = {
   key: 'root',
@@ -17,5 +18,6 @@ export const rootReducer = persistReducer(
   combineReducers({
     [products.reducerPath]: products.reducer,
     auth: authReducer,
+    bag: bagReducer,
   }),
 );

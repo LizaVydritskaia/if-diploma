@@ -4,4 +4,7 @@ export const initialState = {
   auth: {
     status: authStatuses.loggedOut,
   },
+  bag: {
+    productsInBag: [],
+  },
 };
