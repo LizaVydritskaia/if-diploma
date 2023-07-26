@@ -1,8 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 //config
 import { descriptionConfig } from './descriptionConfig';
+
+//slices
+import { addProductToBag } from '../../../store/slices/bag.slice';
 
 //components
 import { Footer } from '../../sections/Footer';
@@ -11,8 +15,6 @@ import { Icon } from '../../Icon';
 
 //styles
 import { useProductPageStyles } from './ProductPage.styles';
-import { useDispatch } from 'react-redux';
-import { addProductToBag } from '../../../store/slices/bag.slice';
 
 export const ProductPage = () => {
   const classes = useProductPageStyles();
@@ -48,7 +50,10 @@ export const ProductPage = () => {
           <p className={classes.shoppingInfo}>PRE-ORDER</p>
           <div className={classes.color}>
             <p className={classes.text}>COLOR</p>
-            <div className={classes.colorSquare}></div>
+            <div
+              className={classes.colorSquare}
+              style={{ backgroundColor: state.color.hex }}
+            ></div>
           </div>
           <div className={classes.size}>
             <p className={classes.text}>SIZE</p>

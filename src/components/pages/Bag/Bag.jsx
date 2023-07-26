@@ -36,14 +36,14 @@ export const Bag = () => {
     dispatch(deleteProductFromBag(id));
   };
 
-  const productsId = [];
+  const productsIdList = [];
   productsInBag.forEach((product) => {
-    productsId.push(product.id);
+    productsIdList.push(product.id);
   });
 
   const handleOrderProducts = (event) => {
     event.preventDefault();
-    orderProducts(productsId);
+    orderProducts(productsIdList);
   };
 
   return (

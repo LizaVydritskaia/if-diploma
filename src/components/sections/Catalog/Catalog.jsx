@@ -1,22 +1,27 @@
-import React, { Fragment, useCallback } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 //services
 import { useGetProductsQuery } from '../../../services/api/products';
+
+//slices
+import { saveAllProducts } from '../../../store/slices/filter.slice';
 
 //components
 import { Container } from '../../Container';
 import { Loader } from '../../Loader';
 import { Product } from '../../Product';
+import { TextMessage } from '../../TextMessage';
 import { Title } from '../../Title';
 
 //styles
 import { useCatalogStyles } from './Catalog.styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { saveProducts } from '../../../store/slices/filter.slice';
 
 export const Catalog = () => {
   const classes = useCatalogStyles();
+
+  const [allProducts, setAllProducts] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -25,35 +30,47 @@ export const Catalog = () => {
   const filteredProducts = useSelector(
     (state) => state.filter.filteredProducts,
   );
+  const category = useSelector((state) => state.filter.category);
+  const showCategory = useSelector((state) => state.filter.showCategory);
 
-  useCallback(() => {dispatch(saveProducts([...products]))}, [dispatch, products])
-  console.log('products', products);
-  console.log(filteredProducts);
+  useEffect(() => {
+    setAllProducts(products);
+    dispatch(saveAllProducts(allProducts));
+  }, [dispatch, allProducts, products]);
 
   return (
     <Loader loading={isLoading}>
-      {
+      {showCategory && (
         <section>
           <Container>
-            <Title contentText="Dresses" />
-            <div className={classes.productsList}>
-              {products?.map((product) => {
-                return (
-                  <Fragment key={product.id}>
-                    <NavLink to={`/${product.id}`} state={{ ...product }}>
-                      <Product
-                        imageUrl={product.images[0]}
-                        alt={product.name}
-                        price={product.price.value}
-                      />
-                    </NavLink>
-                  </Fragment>
-                );
-              })}
-            </div>
+            {filteredProducts.length < 1 ? (
+              <TextMessage
+                className={classes.messageBlock}
+                contentText="No beauty products found"
+              />
+            ) : (
+              <>
+                <Title contentText={category} />
+                <div className={classes.productsList}>
+                  {filteredProducts?.map((product) => {
+                    return (
+                      <Fragment key={product.id}>
+                        <NavLink to={`/${product.id}`} state={{ ...product }}>
+                          <Product
+                            imageUrl={product.images[0]}
+                            alt={product.name}
+                            price={product.price.value}
+                          />
+                        </NavLink>
+                      </Fragment>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </Container>
         </section>
-      }
+      )}
     </Loader>
   );
 };

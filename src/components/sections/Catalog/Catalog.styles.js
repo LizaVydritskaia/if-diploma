@@ -11,6 +11,12 @@ const catalogStyles = {
       textDecoration: 'none',
     },
   },
+  messageBlock: {
+    fontSize: 40,
+    fontWeight: 400,
+    color: '#8c8c8c',
+    textAlign: 'center',
+  },
 };
 
 export const useCatalogStyles = createUseStyles(catalogStyles, {

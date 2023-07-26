@@ -8,6 +8,9 @@ export const initialState = {
     productsInBag: [],
   },
   filter: {
+    allProducts: null,
     filteredProducts: null,
-  }
+    category: null,
+    showCategory: false,
+  },
 };

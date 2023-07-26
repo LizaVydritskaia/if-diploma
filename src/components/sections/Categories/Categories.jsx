@@ -1,7 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 //config
 import { configCategories } from './configCategories';
+
+//slices
+import {
+  filterProducts,
+  setCategory,
+  setShowCategory,
+} from '../../../store/slices/filter.slice';
 
 //components
 import { Container } from '../../Container';
@@ -10,8 +18,6 @@ import { Title } from '../../Title';
 
 //styles
 import { useCategoriesStyles } from './Categories.styles';
-import { useDispatch } from 'react-redux';
-import { filterProducts } from '../../../store/slices/filter.slice';
 
 export const Categories = () => {
   const classes = useCategoriesStyles();
@@ -20,6 +26,8 @@ export const Categories = () => {
 
   const chooseCategory = (id) => {
     dispatch(filterProducts(id));
+    dispatch(setCategory(id));
+    dispatch(setShowCategory(true));
   };
 
   return (
