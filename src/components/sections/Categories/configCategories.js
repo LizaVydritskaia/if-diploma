@@ -1,36 +1,36 @@
 export const configCategories = [
   {
-    id: 'dresses',
+    id: 'Dresses',
     hrefIconName: '#dresses',
     text: 'Dresses',
     class: 'iconDress',
   },
   {
-    id: 'tees',
+    id: 'Tees',
     hrefIconName: '#tees',
     text: 'Tees',
     class: 'iconTees',
   },
   {
-    id: 'swimwear',
+    id: 'Swimwear',
     hrefIconName: '#swimwear',
     text: 'Swimwear',
     class: 'iconSwimwear',
   },
   {
-    id: 'denim',
+    id: 'Denim',
     hrefIconName: '#denim',
     text: 'Denim',
     class: 'iconDenim',
   },
   {
-    id: 'tops',
+    id: 'Tops',
     hrefIconName: '#tops',
     text: 'Tops',
     class: 'iconTop',
   },
   {
-    id: 'beauty',
+    id: 'Beauty',
     hrefIconName: '#beauty',
     text: 'Beauty',
     class: 'iconBeauty',

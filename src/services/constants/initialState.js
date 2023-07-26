@@ -7,4 +7,7 @@ export const initialState = {
   bag: {
     productsInBag: [],
   },
+  filter: {
+    filteredProducts: null,
+  }
 };

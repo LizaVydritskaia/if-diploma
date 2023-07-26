@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import paymentIcon from '../../../assets/images/payment.svg';
 
+//services
+import { useOrderProductsMutation } from '../../../services/api/order';
+
 //slices
 import { deleteProductFromBag } from '../../../store/slices/bag.slice';
 
@@ -19,15 +22,30 @@ export const Bag = () => {
   const classes = useBagStyles();
 
   const dispatch = useDispatch();
+
+  const [orderProducts] = useOrderProductsMutation();
+
   const productsInBag = useSelector((state) => state.bag.productsInBag);
+
   const totalPrice = productsInBag.reduce((acc, product) => {
     acc += +product.price.value;
     return acc;
   }, 0);
-  console.log(productsInBag);
+
   const handleDeleteProductFromBag = (id) => {
     dispatch(deleteProductFromBag(id));
   };
+
+  const productsId = [];
+  productsInBag.forEach((product) => {
+    productsId.push(product.id);
+  });
+
+  const handleOrderProducts = (event) => {
+    event.preventDefault();
+    orderProducts(productsId);
+  };
+
   return (
     <>
       <Header />
@@ -64,6 +82,7 @@ export const Bag = () => {
           type="button"
           className={classes.button}
           disabled={productsInBag.length < 1}
+          onClick={handleOrderProducts}
         >
           PROCEED TO CHECKOUT
         </button>
