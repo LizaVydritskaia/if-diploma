@@ -10,8 +10,9 @@ import {
 import { PATH } from '../services/constants/paths';
 
 //components
+import { Bag } from '../components/pages/Bag';
 import { Home } from '../components/Home';
-import { ProductPage } from '../components/ProductPage';
+import { ProductPage } from '../components/pages/ProductPage';
 import { SignUp } from '../components/sections/SignUp';
 import { SystemLayout } from '../components/SystemLayout';
 
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
       <Route path={PATH.index} element={<Outlet />}>
         <Route path="/:id" element={<ProductPage />} />
       </Route>
+      <Route path={PATH.bag} element={<Bag />} />
     </Route>,
   ),
 );

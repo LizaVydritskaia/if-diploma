@@ -1,13 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 //config
 import { descriptionConfig } from './descriptionConfig';
 
+//slices
+import { addProductToBag } from '../../../store/slices/bag.slice';
+
 //components
-import { Footer } from '../sections/Footer';
-import { Header } from '../sections/Header';
-import { Icon } from '../Icon';
+import { Footer } from '../../sections/Footer';
+import { Header } from '../../sections/Header';
+import { Icon } from '../../Icon';
 
 //styles
 import { useProductPageStyles } from './ProductPage.styles';
@@ -17,11 +21,17 @@ export const ProductPage = () => {
 
   const [showDescription, setShowDescription] = useState(false);
 
+  const dispatch = useDispatch();
   const location = useLocation();
   const { state } = location;
 
   const toggleShowDescription = () => {
     setShowDescription(!showDescription);
+  };
+
+  const handleAddProductToBag = (event) => {
+    event.stopPropagation();
+    dispatch(addProductToBag(state));
   };
 
   return (
@@ -40,7 +50,10 @@ export const ProductPage = () => {
           <p className={classes.shoppingInfo}>PRE-ORDER</p>
           <div className={classes.color}>
             <p className={classes.text}>COLOR</p>
-            <div className={classes.colorSquare}></div>
+            <div
+              className={classes.colorSquare}
+              style={{ backgroundColor: state.color.hex }}
+            ></div>
           </div>
           <div className={classes.size}>
             <p className={classes.text}>SIZE</p>
@@ -51,7 +64,9 @@ export const ProductPage = () => {
             </div>
           </div>
           <div className={classes.buttons}>
-            <button>ADD TO BAG</button>
+            <button type="button" onClick={handleAddProductToBag}>
+              ADD TO BAG
+            </button>
             <button>
               <Icon className={classes.icon} hrefIconName="#like" />
             </button>

@@ -3,7 +3,8 @@ import { persistStore } from 'redux-persist';
 
 import { rootReducer } from './slices';
 
-import { products } from '../services/products';
+import { order } from '../services/api/order';
+import { products } from '../services/api/products';
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -13,7 +14,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST'],
       },
-    }).concat(products.middleware),
+    }).concat([products.middleware, order.middleware]),
 });
 
 export const persistor = persistStore(store);
