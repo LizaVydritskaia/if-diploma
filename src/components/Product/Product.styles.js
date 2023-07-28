@@ -18,6 +18,19 @@ const productStyles = {
     top: 24,
     right: 24,
     zIndex: 1,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  likeIconFilled: {
+    width: 80,
+    height: 72,
+    position: 'absolute',
+    top: 14,
+    right: 16,
+    zIndex: 1,
+    fill: '#fff',
   },
   price: {
     fontSize: 40,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 //slices
@@ -9,17 +8,17 @@ import { addProductToWishList } from '../../store/slices/wishList.slice';
 import { Icon } from '../Icon';
 
 //styles
-import { useProductStyles } from './Product.styles';
+import { useProductSaleBlockStyles } from './ProductSaleBlock.styles';
 
-export const Product = ({
-  imageUrl,
+export const ProductSaleBlock = ({
+  image,
   alt,
-  price,
+  discount,
+  oldPrice,
+  newPrice,
   productState,
-  path,
-  linkState,
 }) => {
-  const classes = useProductStyles();
+  const classes = useProductSaleBlockStyles();
 
   const dispatch = useDispatch();
 
@@ -34,13 +33,14 @@ export const Product = ({
   };
 
   return (
-    <div className={classes.productBlock}>
+    <div className={classes.productSaleBlock}>
       <div className={classes.imageBlock}>
-        <NavLink to={`/${path}`} state={linkState}>
-          <img className={classes.productImage} src={imageUrl} alt={alt} />
-        </NavLink>
+        <img className={classes.productSaleImage} src={image} alt={alt} />
         {isProductInWishList ? (
-          <Icon className={classes.likeIconFilled} hrefIconName="#like-filled" />
+          <Icon
+            className={classes.likeIconFilled}
+            hrefIconName="#like-filled"
+          />
         ) : (
           <Icon
             className={classes.likeIcon}
@@ -48,8 +48,14 @@ export const Product = ({
             onClick={() => handleAddProductToWishList(productState)}
           />
         )}
+        <div className={classes.discount}>
+          <span className={classes.discountText}>{discount}</span>
+        </div>
       </div>
-      <div className={classes.price}>{`$${price}`}</div>
+      <div className={classes.prices}>
+        <span className={classes.oldPrice}>{oldPrice}</span>
+        <span className={classes.newPrice}>{newPrice}</span>
+      </div>
     </div>
   );
 };

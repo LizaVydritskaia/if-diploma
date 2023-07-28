@@ -13,4 +13,7 @@ export const initialState = {
     category: null,
     showCategory: false,
   },
+  wishList: {
+    productsInWishList: [],
+  },
 };

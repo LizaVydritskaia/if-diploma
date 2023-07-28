@@ -66,11 +66,23 @@ export const headerStyles = {
     width: 27,
     height: 24,
     fill: '#fff',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   wishListIconBlack: {
     width: 27,
     height: 24,
     fill: '#000f08',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  wishListFilled: {
+    width: 40,
+    height: 36,
   },
 };
 

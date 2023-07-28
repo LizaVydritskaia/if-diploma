@@ -8,6 +8,7 @@ import { order } from '../../services/api/order';
 import { authReducer } from './auth.slice';
 import { bagReducer } from './bag.slice';
 import { filterReducer } from './filter.slice';
+import { wishListReducer } from './wishList.slice';
 
 const persistConfig = {
   key: 'root',
@@ -23,5 +24,6 @@ export const rootReducer = persistReducer(
     auth: authReducer,
     bag: bagReducer,
     filter: filterReducer,
+    wishList: wishListReducer,
   }),
 );

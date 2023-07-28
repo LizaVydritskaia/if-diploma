@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 //services
@@ -25,7 +24,7 @@ export const Catalog = () => {
 
   const dispatch = useDispatch();
 
-  const { data: products, isLoading } = useGetProductsQuery();
+  const { data: products = [], isLoading } = useGetProductsQuery();
 
   const filteredProducts = useSelector(
     (state) => state.filter.filteredProducts,
@@ -55,13 +54,14 @@ export const Catalog = () => {
                   {filteredProducts?.map((product) => {
                     return (
                       <Fragment key={product.id}>
-                        <NavLink to={`/${product.id}`} state={{ ...product }}>
-                          <Product
-                            imageUrl={product.images[0]}
-                            alt={product.name}
-                            price={product.price.value}
-                          />
-                        </NavLink>
+                        <Product
+                          imageUrl={product.images[0]}
+                          alt={product.name}
+                          price={product.price.value}
+                          productState={product}
+                          path={product.id}
+                          linkState={{ ...product }}
+                        />
                       </Fragment>
                     );
                   })}

@@ -1,12 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 //config
 import { descriptionConfig } from './descriptionConfig';
 
 //slices
 import { addProductToBag } from '../../../store/slices/bag.slice';
+import { addProductToWishList } from '../../../store/slices/wishList.slice';
 
 //components
 import { Footer } from '../../sections/Footer';
@@ -25,13 +26,20 @@ export const ProductPage = () => {
   const location = useLocation();
   const { state } = location;
 
+  const isProductInWishList = useSelector((s) =>
+    s.wishList.productsInWishList.some((product) => product.id === state.id),
+  );
+
   const toggleShowDescription = () => {
     setShowDescription(!showDescription);
   };
 
-  const handleAddProductToBag = (event) => {
-    event.stopPropagation();
+  const handleAddProductToBag = () => {
     dispatch(addProductToBag(state));
+  };
+
+  const handleAddProductToWishList = () => {
+    dispatch(addProductToWishList(state));
   };
 
   return (
@@ -67,8 +75,15 @@ export const ProductPage = () => {
             <button type="button" onClick={handleAddProductToBag}>
               ADD TO BAG
             </button>
-            <button>
-              <Icon className={classes.icon} hrefIconName="#like" />
+            <button type="button" onClick={handleAddProductToWishList}>
+              {isProductInWishList ? (
+                <Icon
+                  className={classes.iconFilled}
+                  hrefIconName="#like-filled"
+                />
+              ) : (
+                <Icon className={classes.icon} hrefIconName="#like" />
+              )}
             </button>
           </div>
           {descriptionConfig.map((item) => (

@@ -42,6 +42,10 @@ export const Header = () => {
     navigate(PATH.bag);
   };
 
+  const openWishList = () => {
+    navigate(PATH.wishList);
+  };
+
   return (
     <header className={classes.root}>
       <div className={classes.menu}>
@@ -126,14 +130,22 @@ export const Header = () => {
         >
           BAG <span>({bagProductsCount.length})</span>
         </span>
-        <Icon
-          className={
-            location.pathname !== PATH.index
-              ? classes.wishListIconBlack
-              : classes.wishListIcon
-          }
-          hrefIconName="#wish-list"
-        />
+        {location.pathname === PATH.wishList ? (
+          <Icon
+            className={classes.wishListFilled}
+            hrefIconName="#wish-list-filled"
+          />
+        ) : (
+          <Icon
+            className={
+              location.pathname !== PATH.index
+                ? classes.wishListIconBlack
+                : classes.wishListIcon
+            }
+            hrefIconName="#wish-list"
+            onClick={openWishList}
+          />
+        )}
       </div>
     </header>
   );

@@ -79,6 +79,11 @@ const productPageStyles = ({ color }) => ({
     width: 24,
     height: 24,
   },
+  iconFilled: {
+    width: 28,
+    height: 28,
+    fill: '#fff',
+  },
   titleBlock: {
     display: 'flex',
     alignItems: 'center',

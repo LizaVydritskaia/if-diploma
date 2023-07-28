@@ -5,6 +5,9 @@ export const updatesStyles = {
     textAlign: 'center',
     marginBottom: 120,
   },
+  rootMargin: {
+    marginTop: 240,
+  },
   title: {
     fontSize: 32,
     fontWeight: 400,

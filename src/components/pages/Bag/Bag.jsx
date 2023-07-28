@@ -14,6 +14,7 @@ import { Footer } from '../../sections/Footer';
 import { Header } from '../../sections/Header';
 import { Line } from '../../Line';
 import { ProductBagCard } from '../../ProductBagCard';
+import { TextMessage } from '../../TextMessage';
 
 //styles
 import { useBagStyles } from './Bag.styles';
@@ -41,8 +42,7 @@ export const Bag = () => {
     productsIdList.push(product.id);
   });
 
-  const handleOrderProducts = (event) => {
-    event.preventDefault();
+  const handleOrderProducts = () => {
     orderProducts(productsIdList);
   };
 
@@ -58,7 +58,10 @@ export const Bag = () => {
       <Line />
       <div className={classes.productsList}>
         {productsInBag.length < 1 ? (
-          <div className={classes.emptyBag}>There are no items in the cart</div>
+          <TextMessage
+            className={classes.emptyBag}
+            contentText="There are no items in the cart"
+          />
         ) : (
           productsInBag.map((product) => (
             <Fragment key={product.id}>
