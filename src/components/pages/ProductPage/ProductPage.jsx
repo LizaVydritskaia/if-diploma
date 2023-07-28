@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,6 +10,7 @@ import { addProductToBag } from '../../../store/slices/bag.slice';
 import { addProductToWishList } from '../../../store/slices/wishList.slice';
 
 //components
+import { DescriptionBlock } from '../../DescriptionBlock';
 import { Footer } from '../../sections/Footer';
 import { Header } from '../../sections/Header';
 import { Icon } from '../../Icon';
@@ -20,8 +21,6 @@ import { useProductPageStyles } from './ProductPage.styles';
 export const ProductPage = () => {
   const classes = useProductPageStyles();
 
-  const [showDescription, setShowDescription] = useState(false);
-
   const dispatch = useDispatch();
   const location = useLocation();
   const { state } = location;
@@ -29,10 +28,6 @@ export const ProductPage = () => {
   const isProductInWishList = useSelector((s) =>
     s.wishList.productsInWishList.some((product) => product.id === state.id),
   );
-
-  const toggleShowDescription = () => {
-    setShowDescription(!showDescription);
-  };
 
   const handleAddProductToBag = () => {
     dispatch(addProductToBag(state));
@@ -87,28 +82,13 @@ export const ProductPage = () => {
             </button>
           </div>
           {descriptionConfig.map((item) => (
-            <Fragment key={item.id}>
-              <div
-                className={classes.titleBlock}
-                onClick={toggleShowDescription}
-              >
-                {showDescription === true ? (
-                  <Icon
-                    className={classes.expandCollapseIcon}
-                    hrefIconName="#collapse-icon"
-                  />
-                ) : (
-                  <Icon
-                    className={classes.expandCollapseIcon}
-                    hrefIconName="#expand-icon"
-                  />
-                )}
-                <p className={classes.title}>{item.title}</p>
-              </div>
-              {showDescription && (
-                <p className={classes.description}>{state.description}</p>
-              )}
-            </Fragment>
+            <DescriptionBlock
+              key={item.id}
+              description={state.description}
+              title={item.title}
+              elementId={item.id}
+              itemId={item.id}
+            />
           ))}
         </div>
       </div>
