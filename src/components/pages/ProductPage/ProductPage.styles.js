@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-const productPageStyles = () => ({
+const productPageStyles = {
   productContent: {
     display: 'flex',
     gap: 120,
@@ -83,7 +83,7 @@ const productPageStyles = () => ({
     height: 28,
     fill: '#fff',
   },
-});
+};
 
 export const useProductPageStyles = createUseStyles(productPageStyles, {
   name: 'Product Page',

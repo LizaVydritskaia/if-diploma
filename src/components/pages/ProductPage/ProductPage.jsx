@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { descriptionConfig } from './descriptionConfig';
 
 //slices
-import { addProductToBag } from '../../../store/slices/bag.slice';
+import { addIdToList, addProductToBag } from '../../../store/slices/bag.slice';
 import { addProductToWishList } from '../../../store/slices/wishList.slice';
 
 //components
@@ -31,6 +31,7 @@ export const ProductPage = () => {
 
   const handleAddProductToBag = () => {
     dispatch(addProductToBag(state));
+    dispatch(addIdToList(state.id));
   };
 
   const handleAddProductToWishList = () => {

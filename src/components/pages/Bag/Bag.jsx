@@ -1,13 +1,24 @@
 import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
 
 import paymentIcon from '../../../assets/images/payment.svg';
+
+//constants
+import { PATH } from '../../../services/constants/paths';
 
 //services
 import { useOrderProductsMutation } from '../../../services/api/order';
 
 //slices
-import { deleteProductFromBag } from '../../../store/slices/bag.slice';
+import {
+  clearBag,
+  deleteIdFromList,
+  deleteProductFromBag,
+  setShowMessage,
+  setSuccessMessage,
+} from '../../../store/slices/bag.slice';
 
 //components
 import { Footer } from '../../sections/Footer';
@@ -23,10 +34,14 @@ export const Bag = () => {
   const classes = useBagStyles();
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [orderProducts] = useOrderProductsMutation();
 
   const productsInBag = useSelector((state) => state.bag.productsInBag);
+  const productsIdList = useSelector((state) => state.bag.productsIdList);
+  const showMessage = useSelector((state) => state.bag.showMessage);
+  const successMessage = useSelector((state) => state.bag.successMessage);
 
   const totalPrice = productsInBag.reduce((acc, product) => {
     acc += +product.price.value;
@@ -35,66 +50,90 @@ export const Bag = () => {
 
   const handleDeleteProductFromBag = (id) => {
     dispatch(deleteProductFromBag(id));
+    dispatch(deleteIdFromList(id));
   };
 
-  const productsIdList = [];
-  productsInBag.forEach((product) => {
-    productsIdList.push(product.id);
-  });
-
   const handleOrderProducts = () => {
-    orderProducts(productsIdList);
+    orderProducts(productsIdList).then((response) => {
+      dispatch(setShowMessage(true));
+      dispatch(setSuccessMessage(response.data.message));
+      dispatch(clearBag());
+    });
+  };
+
+  const navigateToHomePage = () => {
+    navigate(PATH.index);
+    dispatch(setShowMessage(false));
   };
 
   return (
     <>
       <Header />
-      <div className={classes.titleBlock}>
-        <h2 className={classes.title}>BAG</h2>
-        <span className={classes.count}>
-          {productsInBag.length} {productsInBag.length > 1 ? 'items' : 'item'}
-        </span>
-      </div>
-      <Line />
-      <div className={classes.productsList}>
-        {productsInBag.length < 1 ? (
-          <TextMessage
-            className={classes.emptyBag}
-            contentText="There are no items in the cart"
-          />
-        ) : (
-          productsInBag.map((product) => (
-            <Fragment key={product.id}>
-              <ProductBagCard
-                src={product.images[0]}
-                alt={product.name}
-                productName={product.name}
-                productPrice={`${product.price.currency} $${product.price.value}`}
-                productColor={product.color.name}
-                sizesArray={product.availableSizes}
-                onClick={() => handleDeleteProductFromBag(product.id)}
+      {showMessage ? (
+        <TextMessage
+          className={classes.successMessage}
+          contentText={successMessage}
+        />
+      ) : (
+        <>
+          <div className={classes.titleBlock}>
+            <h2 className={classes.title}>BAG</h2>
+            <span className={classes.count}>
+              {productsInBag.length}{' '}
+              {productsInBag.length > 1 ? 'items' : 'item'}
+            </span>
+          </div>
+          <Line />
+          <div className={classes.productsList}>
+            {productsInBag.length < 1 ? (
+              <TextMessage
+                className={classes.emptyBag}
+                contentText="There are no items in the cart"
               />
-              <Line />
-            </Fragment>
-          ))
-        )}
-      </div>
-      <div className={classes.paymentBlock}>
-        <div className={classes.totalPrice}>Total USD ${totalPrice}</div>
+            ) : (
+              productsInBag.map((product) => (
+                <Fragment key={product.id}>
+                  <ProductBagCard
+                    src={product.images[0]}
+                    alt={product.name}
+                    productName={product.name}
+                    productPrice={`${product.price.currency} $${product.price.value}`}
+                    productColor={product.color.name}
+                    sizesArray={product.availableSizes}
+                    onClick={() => handleDeleteProductFromBag(product.id)}
+                  />
+                  <Line />
+                </Fragment>
+              ))
+            )}
+          </div>
+          <div className={classes.paymentBlock}>
+            <div className={classes.totalPrice}>Total USD ${totalPrice}</div>
+            <button
+              type="button"
+              className={classes.button}
+              disabled={productsInBag.length < 1}
+              onClick={handleOrderProducts}
+            >
+              PROCEED TO CHECKOUT
+            </button>
+            <img
+              className={classes.paymentIcon}
+              src={paymentIcon}
+              alt="Payment icon"
+            />
+          </div>
+        </>
+      )}
+      {showMessage ? (
         <button
           type="button"
-          className={classes.button}
-          disabled={productsInBag.length < 1}
-          onClick={handleOrderProducts}
+          className={classNames(classes.button, classes.backButton)}
+          onClick={navigateToHomePage}
         >
-          PROCEED TO CHECKOUT
+          BACK TO SHOPPING
         </button>
-        <img
-          className={classes.paymentIcon}
-          src={paymentIcon}
-          alt="payment-icon"
-        />
-      </div>
+      ) : null}
       <Footer />
     </>
   );

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { initialState } from '../../services/constants/initialState';
 
 export const wishListSlice = createSlice({
@@ -16,6 +17,7 @@ export const wishListSlice = createSlice({
   },
 });
 
-export const {addProductToWishList, deleteProductFromWishList} = wishListSlice.actions;
+export const { addProductToWishList, deleteProductFromWishList } =
+  wishListSlice.actions;
 
 export const wishListReducer = wishListSlice.reducer;

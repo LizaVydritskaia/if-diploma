@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 //config
 import { configCategories } from './configCategories';
 
+//services
+import { useGetProductsQuery } from '../../../services/api/products';
+
 //slices
 import {
   filterProducts,
+  saveAllProducts,
   setCategory,
   setShowCategory,
 } from '../../../store/slices/filter.slice';
@@ -22,7 +26,16 @@ import { useCategoriesStyles } from './Categories.styles';
 export const Categories = () => {
   const classes = useCategoriesStyles();
 
+  const [allProducts, setAllProducts] = useState([]);
+
   const dispatch = useDispatch();
+
+  const { data: products } = useGetProductsQuery();
+
+  const saveProducts = useCallback(() => {
+    setAllProducts(products);
+    dispatch(saveAllProducts(allProducts));
+  }, [allProducts, dispatch, products]);
 
   const chooseCategory = (id) => {
     dispatch(filterProducts(id));
@@ -40,7 +53,10 @@ export const Categories = () => {
               <div
                 key={category.id}
                 className={classes.categoryBlock}
-                onClick={() => chooseCategory(category.id)}
+                onClick={() => {
+                  saveProducts();
+                  chooseCategory(category.id);
+                }}
               >
                 <Icon
                   className={classes[category.class]}

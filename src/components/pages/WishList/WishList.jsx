@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 //slices
 import { deleteProductFromWishList } from '../../../store/slices/wishList.slice';
-import { addProductToBag } from '../../../store/slices/bag.slice';
+import { addIdToList, addProductToBag } from '../../../store/slices/bag.slice';
 
 //components
 import { Footer } from '../../sections/Footer';
@@ -25,12 +25,13 @@ export const WishList = () => {
   );
 
   const handleDeleteProductFromWishList = (id) => {
-    dispatch(deleteProductFromWishList(id))
+    dispatch(deleteProductFromWishList(id));
   };
 
-  const handleAddProductToBag = (item) => {
-    dispatch(addProductToBag(item))
-  }
+  const handleAddProductToBag = (item, id) => {
+    dispatch(addProductToBag(item));
+    dispatch(addIdToList(id));
+  };
 
   return (
     <>
@@ -45,7 +46,10 @@ export const WishList = () => {
       <Line />
       <div>
         {productsInWishList.length < 1 ? (
-          <TextMessage className={classes.emptyWishList} contentText="There are no items in the wish list" />
+          <TextMessage
+            className={classes.emptyWishList}
+            contentText="There are no items in the wish list"
+          />
         ) : (
           productsInWishList.map((product) => (
             <Fragment key={product.id}>
@@ -56,8 +60,10 @@ export const WishList = () => {
                 productPrice={`${product.price.currency} $${product.price.value}`}
                 productColor={product.color.name}
                 sizesArray={product.availableSizes}
-                removeProduct={() => handleDeleteProductFromWishList(product.id)}
-                addToBag={() => handleAddProductToBag(product)}
+                removeProduct={() =>
+                  handleDeleteProductFromWishList(product.id)
+                }
+                addToBag={() => handleAddProductToBag(product, product.id)}
               />
               <Line />
             </Fragment>

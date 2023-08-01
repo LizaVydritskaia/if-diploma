@@ -6,6 +6,9 @@ export const initialState = {
   },
   bag: {
     productsInBag: [],
+    productsIdList: [],
+    successMessage: null,
+    showMessage: false,
   },
   filter: {
     allProducts: null,

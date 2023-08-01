@@ -1,6 +1,13 @@
 import { createUseStyles } from 'react-jss';
 
 const bagStyles = {
+  successMessage: {
+    fontSize: 40,
+    fontWeight: 400,
+    color: '#000f08',
+    textAlign: 'center',
+    margin: '200px auto 200px',
+  },
   emptyBag: {
     fontSize: 40,
     fontWeight: 400,
@@ -57,6 +64,10 @@ const bagStyles = {
     '&:disabled': {
       backgroundColor: '#8c8c8c',
     },
+  },
+  backButton: {
+    display: 'block',
+    marginBottom: 240,
   },
   paymentIcon: {
     display: 'block',
