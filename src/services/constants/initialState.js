@@ -6,11 +6,21 @@ export const initialState = {
   },
   bag: {
     productsInBag: [],
+    productsIdList: [],
+    successMessage: null,
+    showMessage: false,
   },
   filter: {
     allProducts: null,
     filteredProducts: null,
     category: null,
     showCategory: false,
+  },
+  wishList: {
+    productsInWishList: [],
+  },
+  updates: {
+    successUpdatesMessage: null,
+    showUpdatesMessage: false,
   },
 };

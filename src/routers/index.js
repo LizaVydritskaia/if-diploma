@@ -15,6 +15,7 @@ import { Home } from '../components/Home';
 import { ProductPage } from '../components/pages/ProductPage';
 import { SignUp } from '../components/sections/SignUp';
 import { SystemLayout } from '../components/SystemLayout';
+import { WishList } from '../components/pages/WishList';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
         <Route path="/:id" element={<ProductPage />} />
       </Route>
       <Route path={PATH.bag} element={<Bag />} />
+      <Route path={PATH.wishList} element={<WishList />} />
     </Route>,
   ),
 );

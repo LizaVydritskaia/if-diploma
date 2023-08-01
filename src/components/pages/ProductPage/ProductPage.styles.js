@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-const productPageStyles = ({ color }) => ({
+const productPageStyles = {
   productContent: {
     display: 'flex',
     gap: 120,
@@ -38,7 +38,6 @@ const productPageStyles = ({ color }) => ({
     width: 64,
     height: 64,
     border: '2px solid #000f08',
-    backgroundColor: color,
     marginBottom: 60,
   },
   text: {
@@ -79,37 +78,12 @@ const productPageStyles = ({ color }) => ({
     width: 24,
     height: 24,
   },
-  titleBlock: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 32,
-    marginBottom: 40,
+  iconFilled: {
+    width: 28,
+    height: 28,
+    fill: '#fff',
   },
-  expandCollapseIcon: {
-    width: 14,
-    height: 14,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 400,
-    color: '#000f08',
-  },
-  description: {
-    maxWidth: 450,
-    fontSize: 24,
-    fontWeight: 400,
-    color: '#8c8c8c',
-    margin: {
-      bottom: 60,
-      left: 45,
-    },
-    textTransform: 'lowercase',
-
-    '&:first-letter': {
-      textTransform: 'uppercase',
-    },
-  },
-});
+};
 
 export const useProductPageStyles = createUseStyles(productPageStyles, {
   name: 'Product Page',

@@ -7,8 +7,6 @@ import { changeStatus } from '../../../store/slices/auth.slice';
 
 //constants
 import { authStatuses } from '../../../services/constants/authStatuses';
-
-//constants
 import { PATH } from '../../../services/constants/paths';
 
 //components
@@ -40,6 +38,10 @@ export const Header = () => {
 
   const openBag = () => {
     navigate(PATH.bag);
+  };
+
+  const openWishList = () => {
+    navigate(PATH.wishList);
   };
 
   return (
@@ -126,14 +128,22 @@ export const Header = () => {
         >
           BAG <span>({bagProductsCount.length})</span>
         </span>
-        <Icon
-          className={
-            location.pathname !== PATH.index
-              ? classes.wishListIconBlack
-              : classes.wishListIcon
-          }
-          hrefIconName="#wish-list"
-        />
+        {location.pathname === PATH.wishList ? (
+          <Icon
+            className={classes.wishListFilled}
+            hrefIconName="#wish-list-filled"
+          />
+        ) : (
+          <Icon
+            className={
+              location.pathname !== PATH.index
+                ? classes.wishListIconBlack
+                : classes.wishListIcon
+            }
+            hrefIconName="#wish-list"
+            onClick={openWishList}
+          />
+        )}
       </div>
     </header>
   );

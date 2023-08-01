@@ -6,30 +6,62 @@ import denim from '../../../assets/images/denim.jpg';
 export const configSale = [
   {
     id: 'swimwear',
-    image: swimwear,
+    name: 'TEXTURED SWIMSUIT',
+    price: {
+      currency: 'USD',
+      oldPrice: '$13.00',
+      value: '5.90',
+    },
+    color: {
+      name: 'Dark blue',
+    },
+    availableSizes: ['XS, S, M, L, XL, XXL'],
+    images: [swimwear],
     discount: '-55%',
-    oldPrice: '$13.00',
-    newPrice: '$5.90',
   },
   {
     id: 'top',
-    image: top,
+    name: 'LONG SLEEVE TOP',
+    price: {
+      currency: 'USD',
+      oldPrice: '$8.00',
+      value: '4.90',
+    },
+    color: {
+      name: 'Light blue',
+    },
+    availableSizes: ['XS, S, M, L, XL, XXL'],
+    images: [top],
     discount: '-39%',
-    oldPrice: '$8.00',
-    newPrice: '$4.90',
   },
   {
     id: 'tee',
-    image: tee,
+    name: 'COTTON T-SHIRT',
+    price: {
+      currency: 'USD',
+      oldPrice: '$14.00',
+      value: '5.90',
+    },
+    color: {
+      name: 'Dark grey',
+    },
+    availableSizes: ['XS, S, M, L, XL, XXL'],
+    images: [tee],
     discount: '-58%',
-    oldPrice: '$14.00',
-    newPrice: '$5.90',
   },
   {
     id: 'denim',
-    image: denim,
+    name: 'THE TREVOR FULL LENGTH JEANS',
+    price: {
+      currency: 'USD',
+      oldPrice: '$9.00',
+      value: '5.90',
+    },
+    color: {
+      name: 'Blue',
+    },
+    availableSizes: ['XS, S, M, L, XL, XXL'],
+    images: [denim],
     discount: '-34%',
-    oldPrice: '$9.00',
-    newPrice: '$5.90',
   },
 ];

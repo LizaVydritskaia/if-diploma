@@ -5,6 +5,7 @@ import { rootReducer } from './slices';
 
 import { order } from '../services/api/order';
 import { products } from '../services/api/products';
+import { updates } from '../services/api/updates';
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -14,7 +15,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: ['persist/PERSIST'],
       },
-    }).concat([products.middleware, order.middleware]),
+    }).concat([products.middleware, order.middleware, updates.middleware]),
 });
 
 export const persistor = persistStore(store);

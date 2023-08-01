@@ -1,14 +1,16 @@
-import React, { Fragment, useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 //config
 import { descriptionConfig } from './descriptionConfig';
 
 //slices
-import { addProductToBag } from '../../../store/slices/bag.slice';
+import { addIdToList, addProductToBag } from '../../../store/slices/bag.slice';
+import { addProductToWishList } from '../../../store/slices/wishList.slice';
 
 //components
+import { DescriptionBlock } from '../../DescriptionBlock';
 import { Footer } from '../../sections/Footer';
 import { Header } from '../../sections/Header';
 import { Icon } from '../../Icon';
@@ -19,19 +21,21 @@ import { useProductPageStyles } from './ProductPage.styles';
 export const ProductPage = () => {
   const classes = useProductPageStyles();
 
-  const [showDescription, setShowDescription] = useState(false);
-
   const dispatch = useDispatch();
   const location = useLocation();
   const { state } = location;
 
-  const toggleShowDescription = () => {
-    setShowDescription(!showDescription);
+  const isProductInWishList = useSelector((s) =>
+    s.wishList.productsInWishList.some((product) => product.id === state.id),
+  );
+
+  const handleAddProductToBag = () => {
+    dispatch(addProductToBag(state));
+    dispatch(addIdToList(state.id));
   };
 
-  const handleAddProductToBag = (event) => {
-    event.stopPropagation();
-    dispatch(addProductToBag(state));
+  const handleAddProductToWishList = () => {
+    dispatch(addProductToWishList(state));
   };
 
   return (
@@ -67,33 +71,25 @@ export const ProductPage = () => {
             <button type="button" onClick={handleAddProductToBag}>
               ADD TO BAG
             </button>
-            <button>
-              <Icon className={classes.icon} hrefIconName="#like" />
+            <button type="button" onClick={handleAddProductToWishList}>
+              {isProductInWishList ? (
+                <Icon
+                  className={classes.iconFilled}
+                  hrefIconName="#like-filled"
+                />
+              ) : (
+                <Icon className={classes.icon} hrefIconName="#like" />
+              )}
             </button>
           </div>
           {descriptionConfig.map((item) => (
-            <Fragment key={item.id}>
-              <div
-                className={classes.titleBlock}
-                onClick={toggleShowDescription}
-              >
-                {showDescription === true ? (
-                  <Icon
-                    className={classes.expandCollapseIcon}
-                    hrefIconName="#collapse-icon"
-                  />
-                ) : (
-                  <Icon
-                    className={classes.expandCollapseIcon}
-                    hrefIconName="#expand-icon"
-                  />
-                )}
-                <p className={classes.title}>{item.title}</p>
-              </div>
-              {showDescription && (
-                <p className={classes.description}>{state.description}</p>
-              )}
-            </Fragment>
+            <DescriptionBlock
+              key={item.id}
+              description={state.description}
+              title={item.title}
+              elementId={item.id}
+              itemId={item.id}
+            />
           ))}
         </div>
       </div>

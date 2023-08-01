@@ -5,6 +5,9 @@ export const updatesStyles = {
     textAlign: 'center',
     marginBottom: 120,
   },
+  rootMargin: {
+    marginTop: 240,
+  },
   title: {
     fontSize: 32,
     fontWeight: 400,
@@ -31,11 +34,21 @@ export const updatesStyles = {
     width: 715,
     height: 50,
     border: 'none',
+    fontSize: 32,
+    fontWeight: 400,
+    color: '#000f08',
 
     '&::placeholder': {
       fontSize: 32,
       fontWeight: 400,
       color: '#8c8c8c',
+    },
+    '&:focus': {
+      outline: 'none',
+    },
+    '&:focus::placeholder': {
+      opacity: 0,
+      transition: 'opacity 0.3s ease',
     },
   },
   button: {
@@ -46,6 +59,17 @@ export const updatesStyles = {
     fontSize: 32,
     fontWeight: 400,
     color: '#000f08',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  successMessage: {
+    fontSize: 32,
+    fontWeight: 400,
+    color: '#000f08',
+    textAlign: 'center',
+    margin: '200px auto 200px',
   },
 };
 

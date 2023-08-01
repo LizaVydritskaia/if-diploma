@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 //config
 import { configSale } from './configSale';
@@ -6,6 +6,7 @@ import { configSale } from './configSale';
 //components
 import { Container } from '../../Container';
 import { Icon } from '../../Icon';
+import { ProductSaleBlock } from '../../ProductSaleBlock';
 import { Title } from '../../Title';
 
 //styles
@@ -21,25 +22,16 @@ export const Sale = () => {
         <div className={classes.productsSaleList}>
           {configSale.map((product) => {
             return (
-              <div key={product.id} className={classes.productSaleBlock}>
-                <div className={classes.imageBlock}>
-                  <img
-                    className={classes.productSaleImage}
-                    src={product.image}
-                    alt={product.id}
-                  />
-                  <Icon className={classes.likeIcon} hrefIconName="#like" />
-                  <div className={classes.discount}>
-                    <span className={classes.discountText}>
-                      {product.discount}
-                    </span>
-                  </div>
-                </div>
-                <div className={classes.prices}>
-                  <span className={classes.oldPrice}>{product.oldPrice}</span>
-                  <span className={classes.newPrice}>{product.newPrice}</span>
-                </div>
-              </div>
+              <Fragment key={product.id}>
+                <ProductSaleBlock
+                  image={product.images[0]}
+                  alt={product.name}
+                  discount={product.discount}
+                  oldPrice={product.price.oldPrice}
+                  newPrice={`$${product.price.value}`}
+                  productState={product}
+                />
+              </Fragment>
             );
           })}
           <Icon className={classes.arrow} hrefIconName="#arrow" />
