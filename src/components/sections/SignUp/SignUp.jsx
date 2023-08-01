@@ -7,8 +7,6 @@ import { changeStatus } from '../../../store/slices/auth.slice';
 
 //constants
 import { authStatuses } from '../../../services/constants/authStatuses';
-
-//constants
 import { PATH } from '../../../services/constants/paths';
 
 //components

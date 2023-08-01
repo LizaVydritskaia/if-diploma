@@ -19,4 +19,8 @@ export const initialState = {
   wishList: {
     productsInWishList: [],
   },
+  updates: {
+    successUpdatesMessage: null,
+    showUpdatesMessage: false,
+  },
 };
