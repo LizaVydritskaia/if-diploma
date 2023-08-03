@@ -29,6 +29,7 @@ const signUpStyles = {
   iconClose: {
     width: 32,
     height: 32,
+    fill: '#000f08',
 
     '&:hover': {
       cursor: 'pointer',
