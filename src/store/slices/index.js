@@ -11,6 +11,7 @@ import { updates } from '../../services/api/updates';
 import { authReducer } from './auth.slice';
 import { bagReducer } from './bag.slice';
 import { filterReducer } from './filter.slice';
+import { searchReducer } from './search.slice';
 import { updatesReducer } from './updates.slice';
 import { wishListReducer } from './wishList.slice';
 
@@ -29,6 +30,7 @@ export const rootReducer = persistReducer(
     auth: authReducer,
     bag: bagReducer,
     filter: filterReducer,
+    search: searchReducer,
     updates: updatesReducer,
     wishList: wishListReducer,
   }),

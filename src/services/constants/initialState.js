@@ -23,4 +23,10 @@ export const initialState = {
     successUpdatesMessage: null,
     showUpdatesMessage: false,
   },
+  search: {
+    inputValue: null,
+    searchResultList: null,
+    showSearchModal: false,
+    showSearchResults: false,
+  },
 };
