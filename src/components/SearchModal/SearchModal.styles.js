@@ -12,11 +12,12 @@ const searchModalStyles = {
   },
   formWrapper: {
     display: 'flex',
+    alignItems: 'center',
     gap: 170,
     margin: {
       top: 362,
       left: 426,
-    }
+    },
   },
   closeIcon: {
     width: 88,
@@ -48,6 +49,29 @@ const searchModalStyles = {
     '&:focus::placeholder': {
       opacity: 0,
       transition: 'opacity 0.3s ease',
+    },
+  },
+  '@media (max-width: 1600px)': {
+    formWrapper: {
+      gap: 80,
+      margin: {
+        top: 160,
+        left: 240,
+      },
+    },
+    closeIcon: {
+      width: 32,
+      height: 32,
+    },
+    input: {
+      width: 1000,
+      height: 48,
+      borderBottom: '3px solid #fff',
+      fontSize: 32,
+
+      '&::placeholder': {
+        fontSize: 32,
+      },
     },
   },
 };

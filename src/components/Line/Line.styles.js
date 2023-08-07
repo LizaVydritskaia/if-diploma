@@ -8,6 +8,11 @@ const lineStyles = {
     margin: '0 auto',
     backgroundColor: '#d8d8d8',
   },
+  '@media (max-width: 1600px)': {
+    line: {
+      maxWidth: 600,
+    },
+  },
 };
 
 export const useLineStyles = createUseStyles(lineStyles, { name: 'Line' });

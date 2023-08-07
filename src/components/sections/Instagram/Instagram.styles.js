@@ -13,6 +13,10 @@ const instagramStyles = {
     fontSize: 32,
     fontWeight: 400,
     color: '#000f08',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   shop: {
     display: 'flex',
@@ -38,6 +42,36 @@ const instagramStyles = {
   image: {
     width: 604,
     height: 626,
+  },
+  '@media (max-width: 1600px)': {
+    root: {
+      marginBottom: 120,
+    },
+    shopTextBlock: {
+      gap: 60,
+      marginBottom: 40,
+    },
+    text: {
+      fontSize: 20,
+    },
+    shop: {
+      gap: 10,
+    },
+    nextArrowIcon: {
+      width: 14,
+      height: 14,
+    },
+    images: {
+      marginBottom: 40,
+    },
+    bigImage: {
+      width: 680,
+      height: 682,
+    },
+    image: {
+      width: 332,
+      height: 342,
+    },
   },
 };
 

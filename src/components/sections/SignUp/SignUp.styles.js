@@ -126,6 +126,10 @@ const signUpStyles = {
     '& span': {
       color: '#000f08',
       textDecoration: 'underline',
+
+      '&:hover': {
+        cursor: 'pointer',
+      },
     },
   },
   button: {
@@ -139,6 +143,7 @@ const signUpStyles = {
 
     '&:hover': {
       cursor: 'pointer',
+      backgroundColor: '#181818',
     },
   },
   signInLink: {
@@ -146,6 +151,80 @@ const signUpStyles = {
     fontWeight: 400,
     color: '#000f08',
     textDecoration: 'underline',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  '@media (max-width: 1600px)': {
+    root: {
+      height: '100vh',
+      padding: '60px 0',
+    },
+    signUp: {
+      width: 500,
+      height: 580,
+      padding: 40,
+    },
+    header: {
+      marginBottom: 40,
+
+      '& h2': {
+        fontSize: 20,
+      },
+    },
+    iconClose: {
+      width: 16,
+      height: 16,
+    },
+    input: {
+      height: 30,
+      borderBottom: '2px solid #d8d8d8',
+      fontSize: 16,
+      marginBottom: 32,
+
+      '&:last-child': {
+        marginBottom: 32,
+      },
+      '&::placeholder': {
+        fontSize: 16,
+      },
+    },
+    checkboxWrapper: {
+      marginBottom: 32,
+    },
+    checkboxLabel: {
+      fontSize: 12,
+      paddingLeft: 30,
+
+      '&::before': {
+        width: 14,
+        height: 14,
+        border: '1px solid #000f08',
+      },
+      '&::after': {
+        width: 12,
+        height: 8,
+        background: {
+          size: '12px 8px',
+        },
+        top: 4,
+        left: 2,
+      },
+    },
+    privacy: {
+      fontSize: 14,
+      marginBottom: 30,
+    },
+    button: {
+      width: 240,
+      height: 50,
+      fontSize: 18,
+      margin: '0 auto 32px',
+    },
+    signInLink: {
+      fontSize: 12,
+    },
   },
 };
 

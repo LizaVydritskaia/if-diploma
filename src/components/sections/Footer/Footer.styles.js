@@ -25,6 +25,9 @@ const footerStyles = {
     listStyle: 'none',
     maxWidth: 265,
 
+    '&:hover': {
+      textDecoration: 'underline',
+    },
     '& a': {
       textDecoration: 'none',
       color: '#000f08',
@@ -42,6 +45,30 @@ const footerStyles = {
   icon: {
     width: 24,
     height: 24,
+  },
+  '@media (max-width: 1600px)': {
+    footerList: {
+      gap: 220,
+      marginBottom: 100,
+    },
+    headLink: {
+      fontSize: 16,
+      marginBottom: 36,
+    },
+    link: {
+      fontSize: 12,
+      lineHeight: '14px',
+      marginBottom: 24,
+      maxWidth: 170,
+    },
+    socialMediaBlock: {
+      gap: 10,
+      marginBottom: 20,
+    },
+    icon: {
+      width: 16,
+      height: 16,
+    },
   },
 };
 

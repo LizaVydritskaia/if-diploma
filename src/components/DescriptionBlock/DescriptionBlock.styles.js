@@ -10,11 +10,19 @@ const descriptionBlockStyles = {
   expandCollapseIcon: {
     width: 14,
     height: 14,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   title: {
     fontSize: 24,
     fontWeight: 400,
     color: '#000f08',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   description: {
     maxWidth: 450,
@@ -24,6 +32,26 @@ const descriptionBlockStyles = {
     margin: {
       bottom: 60,
       left: 45,
+    },
+  },
+  '@media (max-width: 1600px)': {
+    titleBlock: {
+      gap: 18,
+      marginBottom: 20,
+    },
+    expandCollapseIcon: {
+      width: 10,
+    },
+    title: {
+      fontSize: 16,
+    },
+    description: {
+      maxWidth: 305,
+      fontSize: 16,
+      margin: {
+        bottom: 50,
+        left: 28,
+      },
     },
   },
 };

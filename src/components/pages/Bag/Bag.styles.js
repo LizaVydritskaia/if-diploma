@@ -60,6 +60,7 @@ const bagStyles = {
 
     '&:hover': {
       cursor: 'pointer',
+      backgroundColor: '#181818',
     },
     '&:disabled': {
       backgroundColor: '#8c8c8c',
@@ -68,12 +69,54 @@ const bagStyles = {
   backButton: {
     display: 'block',
     marginBottom: 240,
+
+    '&:hover': {
+      cursor: 'pointer',
+      backgroundColor: '#181818',
+    },
   },
   paymentIcon: {
     display: 'block',
     width: 170,
     height: 48,
     marginBottom: 240,
+  },
+  '@media (max-width: 1600px)': {
+    successMessage: {
+      fontSize: 24,
+      margin: '100px auto 120px',
+    },
+    emptyBag: {
+      fontSize: 24,
+      margin: '100px auto 120px',
+    },
+    titleBlock: {
+      maxWidth: 600,
+      gap: 20,
+    },
+    title: {
+      fontSize: 28,
+    },
+    count: {
+      fontSize: 18,
+    },
+    totalPrice: {
+      fontSize: 24,
+      margin: '80px auto 32px',
+    },
+    button: {
+      maxWidth: 280,
+      height: 60,
+      fontSize: 18,
+    },
+    backButton: {
+      marginBottom: 240,
+    },
+    paymentIcon: {
+      width: 120,
+      height: 48,
+      marginBottom: 180,
+    },
   },
 };
 

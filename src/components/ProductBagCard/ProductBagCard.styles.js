@@ -24,6 +24,20 @@ const productBagCardStyles = {
     width: 24,
     height: 24,
   },
+  '@media (max-width: 1600px)': {
+    cardBlock: {
+      maxWidth: 600,
+    },
+    button: {
+      gap: 8,
+      fontSize: 14,
+      bottom: 20,
+      right: 5,
+    },
+    removeIcon: {
+      width: 16,
+    },
+  },
 };
 
 export const useProductBagCardStyles = createUseStyles(productBagCardStyles, {

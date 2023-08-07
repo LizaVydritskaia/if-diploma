@@ -84,6 +84,50 @@ export const headerStyles = {
     width: 40,
     height: 36,
   },
+  '@media (max-width: 1600px)': {
+    root: {
+      maxWidth: 1330,
+      padding: {
+        top: 8,
+        bottom: 8,
+      },
+    },
+    logo: {
+      width: 230,
+    },
+    logoBlack: {
+      width: 220,
+    },
+    menu: {
+      gap: 40,
+    },
+    text: {
+      fontSize: 14,
+    },
+    textBlack: {
+      fontSize: 14,
+    },
+    search: {
+      gap: 5,
+    },
+    searchIcon: {
+      width: 12,
+      height: 12,
+    },
+    searchIconBlack: {
+      width: 12,
+      height: 12,
+    },
+    wishListIcon: {
+      width: 16,
+    },
+    wishListIconBlack: {
+      width: 16,
+    },
+    wishListFilled: {
+      width: 20,
+    },
+  },
 };
 
 export const useHeaderStyles = createUseStyles(headerStyles);

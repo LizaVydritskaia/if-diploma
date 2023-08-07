@@ -44,6 +44,33 @@ const productCardBlockStyles = {
   select: {
     border: 'none',
   },
+  '@media (max-width: 1600px)': {
+    productBlock: {
+      maxWidth: 600,
+      gap: 30,
+      marginTop: 40,
+    },
+    image: {
+      maxWidth: 160,
+      height: 230,
+      marginBottom: 100,
+    },
+    name: {
+      fontSize: 20,
+      marginBottom: 32,
+    },
+    price: {
+      fontSize: 16,
+      marginBottom: 40,
+    },
+    selectBlock: {
+      gap: 5,
+      marginBottom: 18,
+    },
+    selectText: {
+      fontSize: 14,
+    },
+  },
 };
 
 export const useProductCardBlockStyles = createUseStyles(

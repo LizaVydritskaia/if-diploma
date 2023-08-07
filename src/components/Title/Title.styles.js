@@ -9,11 +9,20 @@ const titleStyles = {
     padding: {
       top: 180,
       bottom: 160,
-    }
+    },
   },
   boldText: {
     fontWeight: 500,
-  }
+  },
+  '@media (max-width: 1600px)': {
+    title: {
+      fontSize: 48,
+      padding: {
+        top: 120,
+        bottom: 100,
+      },
+    },
+  },
 };
 
 export const useTitleStyles = createUseStyles(titleStyles);

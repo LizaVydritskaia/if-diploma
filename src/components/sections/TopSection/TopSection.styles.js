@@ -16,7 +16,7 @@ export const topSectionStyles = {
       top: 1010,
       left: 300,
       bottom: 200,
-    }
+    },
   },
   collectionTitle: {
     fontSize: 76,
@@ -44,6 +44,30 @@ export const topSectionStyles = {
     '&:hover': {
       cursor: 'pointer',
       backgroundColor: 'rgba(255, 255, 255, .5)',
+    },
+  },
+  '@media (max-width: 1600px)': {
+    collectionBlock: {
+      padding: {
+        top: 500,
+        left: 165,
+        bottom: 100,
+      },
+    },
+    collectionTitle: {
+      fontSize: 40,
+      paddingBottom: 16,
+    },
+    collectionText: {
+      maxWidth: 600,
+      fontSize: 18,
+      lineHeight: '32px',
+      paddingBottom: 32,
+    },
+    button: {
+      width: 240,
+      height: 50,
+      fontSize: 16,
     },
   },
 };

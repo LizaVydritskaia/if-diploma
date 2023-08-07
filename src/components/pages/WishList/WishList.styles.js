@@ -26,6 +26,22 @@ const wishListStyles = {
     fontWeight: 400,
     color: '#8c8c8c',
   },
+  '@media (max-width: 1600px)': {
+    emptyWishList: {
+      fontSize: 24,
+      margin: '100px auto 120px',
+    },
+    titleBlock: {
+      maxWidth: 600,
+      gap: 20,
+    },
+    title: {
+      fontSize: 28,
+    },
+    count: {
+      fontSize: 18,
+    },
+  },
 };
 
 export const useWishListStyles = createUseStyles(wishListStyles, {

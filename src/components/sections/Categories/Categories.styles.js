@@ -3,10 +3,9 @@ import { createUseStyles } from 'react-jss';
 const categoriesStyles = {
   root: {
     display: 'flex',
-    justifyContent: '',
+    justifyContent: 'space-between',
     alignItems: 'center',
     gap: 24,
-    paddingBottom: 180,
   },
   categoryBlock: {
     display: 'flex',
@@ -49,6 +48,40 @@ const categoriesStyles = {
   iconBeauty: {
     width: 70,
     height: 100,
+  },
+  '@media (max-width: 1600px)': {
+    root: {
+      gap: 24,
+    },
+    categoryBlock: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 20,
+      width: 200,
+      height: 100,
+      padding: '24px 22px',
+    },
+    text: {
+      fontSize: 24,
+    },
+    iconDress: {
+      width: 32,
+    },
+    iconTees: {
+      width: 44,
+    },
+    iconSwimwear: {
+      width: 32,
+    },
+    iconDenim: {
+      width: 28,
+    },
+    iconTop: {
+      width: 40,
+    },
+    iconBeauty: {
+      width: 35,
+    },
   },
 };
 
