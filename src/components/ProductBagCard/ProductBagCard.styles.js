@@ -19,6 +19,10 @@ const productBagCardStyles = {
     position: 'absolute',
     bottom: 60,
     right: 10,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   removeIcon: {
     width: 24,

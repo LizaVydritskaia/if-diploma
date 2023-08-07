@@ -10,6 +10,7 @@ import { authStatuses } from '../../../services/constants/authStatuses';
 import { PATH } from '../../../services/constants/paths';
 
 //components
+import { Button } from '../../Button';
 import { Icon } from '../../Icon';
 
 //styles
@@ -96,7 +97,9 @@ export const SignUp = () => {
             By signing up you agree to <span>Terms of Service</span> and{' '}
             <span>Privacy Policy</span>
           </p>
-          <button className={classes.button}>SIGN UP</button>
+          <Button type="submit" className={classes.button}>
+            SIGN UP
+          </Button>
         </form>
         <p className={classes.signInLink}>
           <a>I HAVE AN ACCOUNT</a>

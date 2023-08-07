@@ -16,6 +16,10 @@ const productCardBlockStyles = {
   productInfo: {
     display: 'flex',
     flexDirection: 'column',
+
+    '& a': {
+      textDecoration: 'none',
+    },
   },
   name: {
     fontSize: 32,
@@ -43,6 +47,42 @@ const productCardBlockStyles = {
   },
   select: {
     border: 'none',
+  },
+  quantityBlock: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+  },
+  numberBlock: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+  },
+  arrowBlock: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 5,
+  },
+  arrowButton: {
+    width: 14,
+    height: 14,
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: 0,
+  },
+  arrow: {
+    width: 10,
+    height: 10,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  arrowUp: {
+    transform: 'rotate(-90deg)',
+  },
+  arrowDown: {
+    transform: 'rotate(90deg)',
   },
   '@media (max-width: 1600px)': {
     productBlock: {

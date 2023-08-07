@@ -1,6 +1,7 @@
 import React from 'react';
 
 //components
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { ProductCardBlock } from '../ProductCardBlock';
 
@@ -16,6 +17,8 @@ export const ProductWishListCard = ({
   sizesArray,
   addToBag,
   removeProduct,
+  path,
+  linkState,
 }) => {
   const classes = useProductsWishListCardStyles();
 
@@ -28,23 +31,25 @@ export const ProductWishListCard = ({
         productPrice={productPrice}
         productColor={productColor}
         sizesArray={sizesArray}
+        path={path}
+        linkState={linkState}
       />
       <div className={classes.buttonsBlock}>
-        <button type="button" className={classes.button} onClick={addToBag}>
+        <Button type="button" className={classes.button} onClick={addToBag}>
           <Icon
             className={classes.shoppingCartIcon}
             hrefIconName="#shopping-cart"
           />
           ADD TO BAG
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           className={classes.button}
           onClick={removeProduct}
         >
           <Icon className={classes.removeIcon} hrefIconName="#close-icon" />
           REMOVE
-        </button>
+        </Button>
       </div>
     </div>
   );

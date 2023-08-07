@@ -1,6 +1,7 @@
 import React from 'react';
 
 //components
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { ProductCardBlock } from '../ProductCardBlock';
 
@@ -14,6 +15,9 @@ export const ProductBagCard = ({
   productPrice,
   productColor,
   sizesArray,
+  path,
+  linkState,
+  productQuantity,
   onClick,
 }) => {
   const classes = useProductBagCardStyles();
@@ -27,11 +31,14 @@ export const ProductBagCard = ({
         productPrice={productPrice}
         productColor={productColor}
         sizesArray={sizesArray}
+        path={path}
+        linkState={linkState}
+        productQuantity={productQuantity}
       />
-      <button type="button" className={classes.button} onClick={onClick}>
+      <Button type="button" className={classes.button} onClick={onClick}>
         <Icon className={classes.removeIcon} hrefIconName="#close-icon" />
         REMOVE
-      </button>
+      </Button>
     </div>
   );
 };

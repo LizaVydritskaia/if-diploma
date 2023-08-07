@@ -6,6 +6,7 @@ import { addProductToWishList } from '../../store/slices/wishList.slice';
 import { addProductToBag } from '../../store/slices/bag.slice';
 
 //components
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 
 //styles
@@ -43,12 +44,13 @@ export const ProductSaleBlock = ({
         <div>
           <img className={classes.productSaleImage} src={image} alt={alt} />
           <div className={classes.hoverBlock}>
-            <button
+            <Button
+              type="button"
               className={classes.hoverButton}
               onClick={() => handleAddProductToBag(productState)}
             >
               ADD TO BAG
-            </button>
+            </Button>
           </div>
         </div>
 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 //slices
-import { deleteProductFromWishList } from '../../../store/slices/wishList.slice';
+import { removeProductFromWishList } from '../../../store/slices/wishList.slice';
 import { addIdToList, addProductToBag } from '../../../store/slices/bag.slice';
 
 //components
@@ -25,7 +25,7 @@ export const WishList = () => {
   );
 
   const handleDeleteProductFromWishList = (id) => {
-    dispatch(deleteProductFromWishList(id));
+    dispatch(removeProductFromWishList(id));
   };
 
   const handleAddProductToBag = (item, id) => {
@@ -60,6 +60,8 @@ export const WishList = () => {
                 productPrice={`${product.price.currency} $${product.price.value}`}
                 productColor={product.color.name}
                 sizesArray={product.availableSizes}
+                path={product.id}
+                linkState={{ ...product }}
                 removeProduct={() =>
                   handleDeleteProductFromWishList(product.id)
                 }
