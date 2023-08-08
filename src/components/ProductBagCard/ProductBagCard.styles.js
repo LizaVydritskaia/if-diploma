@@ -13,7 +13,7 @@ const productBagCardStyles = {
     gap: 10,
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     backgroundColor: 'transparent',
     border: 'none',
     position: 'absolute',

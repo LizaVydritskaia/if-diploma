@@ -4,7 +4,7 @@ const searchModalStyles = {
   modalMask: {
     width: '100%',
     height: '100vh',
-    backgroundColor: '#e5e5e5',
+    backgroundColor: 'var(--background-grey)',
     position: 'fixed',
     top: 0,
     left: 0,
@@ -22,7 +22,7 @@ const searchModalStyles = {
   closeIcon: {
     width: 88,
     height: 88,
-    fill: '#fff',
+    fill: 'var(--general-white)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -32,16 +32,16 @@ const searchModalStyles = {
     width: 2074,
     height: 88,
     border: 'none',
-    borderBottom: '6px solid #fff',
+    borderBottom: '6px solid var(--general-white)',
     fontSize: 64,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
     backgroundColor: 'transparent',
 
     '&::placeholder': {
       fontSize: 64,
       fontWeight: 400,
-      color: '#fff',
+      color: 'var(--general-white)',
     },
     '&:focus': {
       outline: 'none',
@@ -66,7 +66,7 @@ const searchModalStyles = {
     input: {
       width: 1000,
       height: 48,
-      borderBottom: '3px solid #fff',
+      borderBottom: '3px solid var(--general-white)',
       fontSize: 32,
 
       '&::placeholder': {

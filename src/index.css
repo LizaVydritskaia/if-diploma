@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+:root {
+  --general-black: #000f08;
+  --general-white: #fff;
+  --text-general-grey: #8c8c8c;
+  --light-grey: #d8d8d8;
+  --secondary-light-grey: #e8e8e8;
+  --grey: #bdbdbd;
+  --background-grey: #e5e5e5;
+  --hover-button-black: #181818;
+  --red: #d7302d;
+  --pink: #ede7f0;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;

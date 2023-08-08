@@ -12,7 +12,7 @@ const instagramStyles = {
   text: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -26,6 +26,7 @@ const instagramStyles = {
   nextArrowIcon: {
     width: 24,
     height: 24,
+    fill: 'var(--general-black)',
   },
   images: {
     display: 'flex',

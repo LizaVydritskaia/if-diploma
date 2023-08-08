@@ -18,7 +18,7 @@ const descriptionBlockStyles = {
   title: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -28,7 +28,7 @@ const descriptionBlockStyles = {
     maxWidth: 450,
     fontSize: 24,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     margin: {
       bottom: 60,
       left: 45,

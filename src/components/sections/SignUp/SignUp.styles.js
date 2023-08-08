@@ -5,13 +5,13 @@ import checkboxIcon from '../../../assets/images/checkbox-icon.svg';
 const signUpStyles = {
   root: {
     width: '100%',
-    backgroundColor: '#bdbdbd',
+    backgroundColor: 'var(--grey)',
     padding: '275px 0',
   },
   signUp: {
     width: 996,
     height: 1125,
-    backgroundColor: '#fff',
+    backgroundColor: 'var(--general-white)',
     margin: '0 auto',
     padding: 80,
   },
@@ -23,13 +23,13 @@ const signUpStyles = {
     '& h2': {
       fontSize: 32,
       fontWeight: 400,
-      color: '#000f08',
+      color: 'var(--general-black)',
     },
   },
   iconClose: {
     width: 32,
     height: 32,
-    fill: '#000f08',
+    fill: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -42,7 +42,7 @@ const signUpStyles = {
   input: {
     height: 60,
     border: 'none',
-    borderBottom: '2px solid #d8d8d8',
+    borderBottom: '2px solid var(--light-grey)',
     fontSize: 24,
     fontWeight: 400,
     marginBottom: 50,
@@ -53,7 +53,7 @@ const signUpStyles = {
     '&::placeholder': {
       fontSize: 24,
       fontWeight: 400,
-      color: '#8c8c8c',
+      color: 'var(--text-general-grey)',
     },
     '&:focus': {
       outline: 'none',
@@ -68,7 +68,7 @@ const signUpStyles = {
     position: 'absolute',
 
     '&:checked + $checkboxLabel::before': {
-      backgroundColor: '#000f08',
+      backgroundColor: 'var(--general-black)',
     },
     '&:checked + $checkboxLabel::after': {
       opacity: 1,
@@ -77,7 +77,7 @@ const signUpStyles = {
   checkboxLabel: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     display: 'inline-block',
     paddingLeft: 52,
     cursor: 'pointer',
@@ -87,8 +87,8 @@ const signUpStyles = {
       display: 'block',
       width: 32,
       height: 32,
-      border: '2px solid #000f08',
-      backgroundColor: '#fff',
+      border: '2px solid var(--general-black)',
+      backgroundColor: 'var(--general-white)',
       position: 'absolute',
       top: 0,
       left: 0,
@@ -97,7 +97,7 @@ const signUpStyles = {
     },
     '&:hover::before': {
       cursor: 'pointer',
-      backgroundColor: '#eaeaea',
+      backgroundColor: 'var(--general-white)',
     },
     '&::after': {
       content: '""',
@@ -120,11 +120,11 @@ const signUpStyles = {
   privacy: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     marginBottom: 60,
 
     '& span': {
-      color: '#000f08',
+      color: 'var(--general-black)',
       textDecoration: 'underline',
 
       '&:hover': {
@@ -135,21 +135,21 @@ const signUpStyles = {
   button: {
     width: 480,
     height: 100,
-    backgroundColor: '#000f08',
+    backgroundColor: 'var(--general-black)',
     fontSize: 32,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
     margin: '0 auto 60px',
 
     '&:hover': {
       cursor: 'pointer',
-      backgroundColor: '#181818',
+      backgroundColor: 'var(--hover-button-black)',
     },
   },
   signInLink: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textDecoration: 'underline',
 
     '&:hover': {
@@ -179,7 +179,7 @@ const signUpStyles = {
     },
     input: {
       height: 30,
-      borderBottom: '2px solid #d8d8d8',
+      borderBottom: '2px solid var(--light-grey)',
       fontSize: 16,
       marginBottom: 32,
 
@@ -200,7 +200,7 @@ const signUpStyles = {
       '&::before': {
         width: 14,
         height: 14,
-        border: '1px solid #000f08',
+        border: '1px solid var(--general-black)',
       },
       '&::after': {
         width: 12,

@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const updatesStyles = {
+const updatesStyles = {
   root: {
     textAlign: 'center',
     marginBottom: 120,
@@ -11,20 +11,20 @@ export const updatesStyles = {
   title: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 32,
   },
   text: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000',
+    color: 'var(--general-black)',
     marginBottom: 80,
   },
   formWrapper: {
     display: 'block',
     width: 800,
     height: 60,
-    borderBottom: '2px solid #8c8c8c',
+    borderBottom: '2px solid var(--text-general-grey)',
     margin: '0 auto',
   },
   form: {
@@ -38,12 +38,12 @@ export const updatesStyles = {
     border: 'none',
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
 
     '&::placeholder': {
       fontSize: 32,
       fontWeight: 400,
-      color: '#8c8c8c',
+      color: 'var(--text-general-grey)',
     },
     '&:focus': {
       outline: 'none',
@@ -60,7 +60,7 @@ export const updatesStyles = {
     backgroundColor: 'transparent',
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -69,7 +69,7 @@ export const updatesStyles = {
   successMessage: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textAlign: 'center',
     margin: '200px auto 200px',
   },
@@ -116,4 +116,6 @@ export const updatesStyles = {
   },
 };
 
-export const useUpdatesStyles = createUseStyles(updatesStyles);
+export const useUpdatesStyles = createUseStyles(updatesStyles, {
+  name: 'Updates',
+});

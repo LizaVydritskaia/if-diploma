@@ -4,14 +4,14 @@ const bagStyles = {
   successMessage: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textAlign: 'center',
     margin: '200px auto 200px',
   },
   emptyBag: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     margin: '200px auto 200px',
   },
   productsList: {
@@ -30,12 +30,12 @@ const bagStyles = {
   title: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
   },
   count: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
   },
   paymentBlock: {
     display: 'flex',
@@ -45,25 +45,25 @@ const bagStyles = {
   totalPrice: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     margin: '80px auto 48px',
   },
   button: {
     maxWidth: 480,
     width: '100%',
     height: 100,
-    backgroundColor: '#000f08',
+    backgroundColor: 'var(--general-black)',
     fontSize: 32,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
     margin: '0 auto 40px',
 
     '&:hover': {
       cursor: 'pointer',
-      backgroundColor: '#181818',
+      backgroundColor: 'var(--hover-button-black)',
     },
     '&:disabled': {
-      backgroundColor: '#8c8c8c',
+      backgroundColor: 'var(--text-general-grey)',
     },
   },
   backButton: {
@@ -72,7 +72,7 @@ const bagStyles = {
 
     '&:hover': {
       cursor: 'pointer',
-      backgroundColor: '#181818',
+      backgroundColor: 'var(--hover-button-black)',
     },
   },
   paymentIcon: {

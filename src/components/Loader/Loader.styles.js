@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const loaderStyles = {
+const loaderStyles = {
   loader: {
     textAlign: 'center',
 

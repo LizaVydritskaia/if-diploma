@@ -35,19 +35,19 @@ const productSaleBlockStyles = {
     display: 'none',
     width: 342,
     height: 80,
-    backgroundColor: '#fff',
+    backgroundColor: 'var(--general-white)',
     border: `none`,
     borderRadius: 48,
     fontSize: 36,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
 
     '&:hover': {
-      backgroundColor: '#e8e8e8',
+      backgroundColor: 'var(--secondary-light-grey)',
     },
   },
   likeIcon: {
@@ -69,12 +69,12 @@ const productSaleBlockStyles = {
     top: 14,
     right: 16,
     zIndex: 1,
-    fill: '#fff',
+    fill: 'var(--general-white)',
   },
   discount: {
     width: 88,
     height: 48,
-    backgroundColor: '#d7302d',
+    backgroundColor: 'var(--red)',
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -85,7 +85,7 @@ const productSaleBlockStyles = {
   discountText: {
     fontSize: 28,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
   },
   prices: {
     display: 'flex',
@@ -96,13 +96,13 @@ const productSaleBlockStyles = {
   oldPrice: {
     fontSize: 36,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textDecoration: 'line-through',
   },
   newPrice: {
     fontSize: 40,
     fontWeight: 700,
-    color: '#d7302d',
+    color: 'var(--red)',
   },
   '@media (max-width: 1600px)': {
     productSaleBlock: {

@@ -20,31 +20,31 @@ const productPageStyles = {
   productName: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 40,
   },
   productPrice: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 20,
   },
   shoppingInfo: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#d8d8d8',
+    color: 'var(--light-grey)',
     marginBottom: 60,
   },
   colorSquare: {
     width: 64,
     height: 64,
-    border: '2px solid #000f08',
+    border: '2px solid var(--general-black)',
     marginBottom: 60,
   },
   text: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     marginBottom: 30,
   },
   sizeList: {
@@ -52,7 +52,7 @@ const productPageStyles = {
     gap: 40,
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 80,
   },
   buttons: {
@@ -62,14 +62,14 @@ const productPageStyles = {
 
     '& button': {
       height: 100,
-      backgroundColor: '#000f08',
+      backgroundColor: 'var(--general-black)',
       fontSize: 32,
       fontWeight: 400,
-      color: '#fff',
+      color: 'var(--general-white)',
 
       '&:hover': {
         cursor: 'pointer',
-        backgroundColor: '#181818',
+        backgroundColor: 'var(--hover-button-black)',
       },
       '&:first-child': {
         width: 380,
@@ -91,7 +91,7 @@ const productPageStyles = {
   iconFilled: {
     width: 28,
     height: 28,
-    fill: '#fff',
+    fill: 'var(--general-white)',
     position: 'absolute',
     top: '50%',
     left: '50%',

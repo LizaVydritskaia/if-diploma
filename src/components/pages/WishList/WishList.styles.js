@@ -4,7 +4,7 @@ const wishListStyles = {
   emptyWishList: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     margin: '200px auto 200px',
     textAlign: 'center',
   },
@@ -19,12 +19,12 @@ const wishListStyles = {
   title: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
   },
   count: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
   },
   '@media (max-width: 1600px)': {
     emptyWishList: {

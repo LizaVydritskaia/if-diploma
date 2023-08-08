@@ -13,7 +13,7 @@ const categoriesStyles = {
     gap: 36,
     width: 390,
     height: 180,
-    backgroundColor: '#ede7f0',
+    backgroundColor: 'var(--pink)',
     padding: '48px 40px',
 
     '&:hover': {
@@ -23,7 +23,7 @@ const categoriesStyles = {
   text: {
     fontSize: 48,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
   },
   iconDress: {
     width: 64,

@@ -4,7 +4,7 @@ const titleStyles = {
   title: {
     fontSize: 68,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textAlign: 'center',
     padding: {
       top: 180,
@@ -25,4 +25,4 @@ const titleStyles = {
   },
 };
 
-export const useTitleStyles = createUseStyles(titleStyles);
+export const useTitleStyles = createUseStyles(titleStyles, { name: 'Title' });

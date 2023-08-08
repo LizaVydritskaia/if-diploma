@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const spriteStyles = {
+const spriteStyles = {
   svgSprite: {
     position: 'absolute',
     visibility: 'hidden',

@@ -6,7 +6,7 @@ const lineStyles = {
     width: '100%',
     height: 2,
     margin: '0 auto',
-    backgroundColor: '#d8d8d8',
+    backgroundColor: 'var(--light-grey)',
   },
   '@media (max-width: 1600px)': {
     line: {

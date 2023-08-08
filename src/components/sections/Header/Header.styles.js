@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-export const headerStyles = {
+const headerStyles = {
   root: {
     maxWidth: 2440,
     margin: '0 auto',
@@ -15,12 +15,12 @@ export const headerStyles = {
   logo: {
     width: 470,
     height: 50,
-    fill: '#fff',
+    fill: 'var(--general-white)',
   },
   logoBlack: {
     width: 470,
     height: 50,
-    fill: '#000f08',
+    fill: 'var(--general-black)',
   },
   menu: {
     display: 'flex',
@@ -30,7 +30,7 @@ export const headerStyles = {
   text: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -40,7 +40,7 @@ export const headerStyles = {
   textBlack: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -55,17 +55,17 @@ export const headerStyles = {
   searchIcon: {
     width: 24,
     height: 24,
-    fill: '#fff',
+    fill: 'var(--general-white)',
   },
   searchIconBlack: {
     width: 24,
     height: 24,
-    fill: '#000f08',
+    fill: 'var(--general-black)',
   },
   wishListIcon: {
     width: 27,
     height: 24,
-    fill: '#fff',
+    fill: 'var(--general-white)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -74,7 +74,7 @@ export const headerStyles = {
   wishListIconBlack: {
     width: 27,
     height: 24,
-    fill: '#000f08',
+    fill: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -130,4 +130,6 @@ export const headerStyles = {
   },
 };
 
-export const useHeaderStyles = createUseStyles(headerStyles);
+export const useHeaderStyles = createUseStyles(headerStyles, {
+  name: 'Header',
+});

@@ -13,7 +13,7 @@ const footerStyles = {
   headLink: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 60,
     listStyle: 'none',
   },
@@ -30,7 +30,7 @@ const footerStyles = {
     },
     '& a': {
       textDecoration: 'none',
-      color: '#000f08',
+      color: 'var(--general-black)',
     },
     '&:last-child': {
       marginBottom: 0,

@@ -1,7 +1,8 @@
 import { createUseStyles } from 'react-jss';
+
 import topSectionBackground from '../../../assets/images/top-section-background.jpg';
 
-export const topSectionStyles = {
+const topSectionStyles = {
   root: {
     background: {
       image: `url(${topSectionBackground})`,
@@ -21,7 +22,7 @@ export const topSectionStyles = {
   collectionTitle: {
     fontSize: 76,
     fontWeight: 700,
-    color: '#fff',
+    color: 'var(--general-white)',
     paddingBottom: 40,
   },
   collectionText: {
@@ -29,17 +30,17 @@ export const topSectionStyles = {
     fontSize: 32,
     fontWeight: 400,
     lineHeight: '48px',
-    color: '#fff',
+    color: 'var(--general-white)',
     paddingBottom: 60,
   },
   button: {
     width: 480,
     height: 100,
-    border: '2px solid #fff',
+    border: '2px solid var(--general-white)',
     backgroundColor: 'transparent',
     fontSize: 32,
     fontWeight: 400,
-    color: '#fff',
+    color: 'var(--general-white)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -72,4 +73,6 @@ export const topSectionStyles = {
   },
 };
 
-export const useTopSectionStyles = createUseStyles(topSectionStyles);
+export const useTopSectionStyles = createUseStyles(topSectionStyles, {
+  name: 'Top section',
+});

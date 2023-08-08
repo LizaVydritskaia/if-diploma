@@ -24,13 +24,13 @@ const productCardBlockStyles = {
   name: {
     fontSize: 32,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 32,
   },
   price: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     marginBottom: 60,
   },
   selectBlock: {
@@ -42,7 +42,7 @@ const productCardBlockStyles = {
   selectText: {
     fontSize: 24,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
     textTransform: 'uppercase',
   },
   select: {
@@ -73,6 +73,7 @@ const productCardBlockStyles = {
   arrow: {
     width: 10,
     height: 10,
+    fill: 'var(--general-black)',
 
     '&:hover': {
       cursor: 'pointer',
@@ -83,6 +84,10 @@ const productCardBlockStyles = {
   },
   arrowDown: {
     transform: 'rotate(90deg)',
+
+    '&:disabled': {
+      fill: 'var(--text-general-grey)',
+    },
   },
   '@media (max-width: 1600px)': {
     productBlock: {
