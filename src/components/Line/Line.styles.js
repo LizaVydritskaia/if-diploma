@@ -13,6 +13,11 @@ const lineStyles = {
       maxWidth: 600,
     },
   },
+  '@media (max-width: 864px)': {
+    line: {
+      maxWidth: 810,
+    },
+  },
 };
 
 export const useLineStyles = createUseStyles(lineStyles, { name: 'Line' });

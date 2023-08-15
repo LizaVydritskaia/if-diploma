@@ -26,6 +26,12 @@ const catalogStyles = {
       fontSize: 24,
     },
   },
+  '@media (max-width: 864px)': {
+    productsList: {
+      columnGap: 18,
+      rowGap: 48,
+    },
+  },
 };
 
 export const useCatalogStyles = createUseStyles(catalogStyles, {

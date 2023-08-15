@@ -176,11 +176,13 @@ export const Sprite = () => {
       </symbol>
       <symbol id="shopping-cart" viewBox="0 0 28 32">
         <path
-          fill="#000F08"
           fillRule="evenodd"
           d="M20.571 6.857h6.858V32H0V6.857h6.857a6.857 6.857 0 0 1 13.714 0Zm-2.285 2.286H9.143v1.143h9.143V9.143Zm-11.429 0v3.428h2.286v-2.285h9.143v2.285h2.285V9.143h4.572v20.571H2.286V9.143h4.571Zm2.286-2.286a4.571 4.571 0 0 1 9.143 0H9.143Z"
           clipRule="evenodd"
         />
+      </symbol>
+      <symbol id="burger-menu" viewBox="0 0 44 32">
+        <path d="M0 0h44.308v2.462H0V0ZM0 14.769h44.308v2.462H0v-2.462ZM0 29.539h29.538V32H0V29.54Z" />
       </symbol>
     </svg>
   );

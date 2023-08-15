@@ -74,6 +74,31 @@ const searchModalStyles = {
       },
     },
   },
+  '@media (max-width: 864px)': {
+    modalMask: {
+      height: '100%',
+    },
+    formWrapper: {
+      gap: 40,
+      margin: {
+        top: 150,
+        left: 48,
+      },
+    },
+    closeIcon: {
+      width: 24,
+      height: 24,
+    },
+    input: {
+      width: 744,
+      height: 40,
+      fontSize: 28,
+
+      '&::placeholder': {
+        fontSize: 28,
+      },
+    },
+  },
 };
 
 export const useSearchModalStyles = createUseStyles(searchModalStyles, {

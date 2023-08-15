@@ -47,6 +47,13 @@ const productCardBlockStyles = {
   },
   select: {
     border: 'none',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+    '&:focus': {
+      outline: 'none',
+    },
   },
   quantityBlock: {
     display: 'flex',
@@ -114,6 +121,33 @@ const productCardBlockStyles = {
     },
     selectText: {
       fontSize: 14,
+    },
+  },
+  '@media (max-width: 864px)': {
+    productBlock: {
+      maxWidth: 810,
+      gap: 30,
+      marginTop: 40,
+    },
+    image: {
+      maxWidth: 320,
+      height: 460,
+      marginBottom: 174,
+    },
+    name: {
+      fontSize: 32,
+      marginBottom: 20,
+    },
+    price: {
+      fontSize: 24,
+      marginBottom: 60,
+    },
+    selectBlock: {
+      gap: 5,
+      marginBottom: 36,
+    },
+    selectText: {
+      fontSize: 24,
     },
   },
 };

@@ -154,6 +154,29 @@ const productSaleBlockStyles = {
       fontSize: 24,
     },
   },
+  '@media (max-width: 864px)': {
+    productSaleBlock: {
+      width: 356,
+
+      '&:nth-child(n + 3)': {
+        display: 'none',
+      },
+    },
+    imageBlock: {
+      height: 480,
+      marginBottom: 24,
+    },
+    productSaleImage: {
+      width: 356,
+      height: 480,
+    },
+    hoverBlock: {
+      height: 480,
+    },
+    hoverButton: {
+      width: 160,
+    },
+  },
 };
 
 export const useProductSaleBlockStyles = createUseStyles(

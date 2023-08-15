@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 import topSectionBackground from '../../../assets/images/top-section-background.jpg';
+import topSectionBackground850 from '../../../assets/images/top-section-background-850px.jpg';
 
 const topSectionStyles = {
   root: {
@@ -69,6 +70,30 @@ const topSectionStyles = {
       width: 240,
       height: 50,
       fontSize: 16,
+    },
+  },
+  '@media (max-width: 864px)': {
+    root: {
+      background: {
+        image: `url(${topSectionBackground850})`,
+        size: 'cover',
+      },
+      padding: {
+        bottom: 610,
+      },
+    },
+    collectionBlock: {
+      alignItems: 'center',
+      padding: {
+        top: 0,
+        left: 0,
+        bottom: 0,
+      },
+      position: 'relative',
+      top: 560,
+    },
+    collectionText: {
+      textAlign: 'center',
     },
   },
 };

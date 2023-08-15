@@ -23,6 +23,15 @@ const titleStyles = {
       },
     },
   },
+  '@media (max-width: 864px)': {
+    title: {
+      fontSize: 40,
+      padding: {
+        top: 80,
+        bottom: 80,
+      },
+    },
+  },
 };
 
 export const useTitleStyles = createUseStyles(titleStyles, { name: 'Title' });

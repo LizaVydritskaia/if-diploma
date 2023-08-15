@@ -118,6 +118,43 @@ const bagStyles = {
       marginBottom: 180,
     },
   },
+  '@media (max-width: 864px)': {
+    successMessage: {
+      fontSize: 28,
+      margin: '80px auto 100px',
+    },
+    emptyBag: {
+      fontSize: 28,
+      margin: '80px auto 100px',
+    },
+    titleBlock: {
+      maxWidth: 810,
+      gap: 20,
+    },
+    title: {
+      fontSize: 40,
+    },
+    count: {
+      fontSize: 24,
+    },
+    totalPrice: {
+      fontSize: 32,
+      margin: '80px auto 60px',
+    },
+    button: {
+      maxWidth: 440,
+      height: 80,
+      fontSize: 28,
+    },
+    backButton: {
+      marginBottom: 440,
+    },
+    paymentIcon: {
+      width: 170,
+      height: 48,
+      marginBottom: 80,
+    },
+  },
 };
 
 export const useBagStyles = createUseStyles(bagStyles, { name: 'Bag' });

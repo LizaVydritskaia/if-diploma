@@ -10,11 +10,21 @@ const footerStyles = {
       paddingLeft: 0,
     },
   },
+  headLinkBlock: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 20,
+    marginBottom: 60,
+  },
+  expandCollapseIcon: {
+    width: 16,
+    height: 16,
+    display: 'none',
+  },
   headLink: {
     fontSize: 32,
     fontWeight: 400,
     color: 'var(--general-black)',
-    marginBottom: 60,
     listStyle: 'none',
   },
   link: {
@@ -36,6 +46,9 @@ const footerStyles = {
       marginBottom: 0,
     },
   },
+  hideLinkInfo: {
+    display: 'block',
+  },
   socialMediaBlock: {
     display: 'flex',
     alignItems: 'center',
@@ -46,14 +59,19 @@ const footerStyles = {
     width: 24,
     height: 24,
   },
+  footerLine: {
+    display: 'none',
+  },
   '@media (max-width: 1600px)': {
     footerList: {
       gap: 220,
       marginBottom: 100,
     },
+    headLinkBlock: {
+      marginBottom: 36,
+    },
     headLink: {
       fontSize: 16,
-      marginBottom: 36,
     },
     link: {
       fontSize: 12,
@@ -68,6 +86,51 @@ const footerStyles = {
     icon: {
       width: 16,
       height: 16,
+    },
+  },
+  '@media (max-width: 864px)': {
+    footerList: {
+      flexDirection: 'column',
+      gap: 0,
+      marginBottom: 90,
+    },
+    headLinkBlock: {
+      marginBottom: 30,
+    },
+    expandCollapseIcon: {
+      display: 'block',
+    },
+    headLink: {
+      fontSize: 24,
+    },
+    link: {
+      fontSize: 18,
+      lineHeight: '24px',
+      marginBottom: 30,
+      maxWidth: 500,
+
+      '&:last-child': {
+        marginBottom: 0,
+      },
+    },
+    hideLinkInfo: {
+      display: 'none',
+      marginBottom: 30,
+    },
+    socialMediaBlock: {
+      gap: 10,
+      marginBottom: 30,
+    },
+    icon: {
+      width: 20,
+      height: 20,
+    },
+    footerLine: {
+      display: 'block',
+      maxWidth: 834,
+      width: '100%',
+      margin: '20px auto 50px',
+      borderBottom: '2px dashed var(--light-grey)',
     },
   },
 };

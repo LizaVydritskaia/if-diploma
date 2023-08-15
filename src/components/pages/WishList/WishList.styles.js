@@ -42,6 +42,18 @@ const wishListStyles = {
       fontSize: 18,
     },
   },
+  '@media (max-width: 864px)': {
+    titleBlock: {
+      maxWidth: 810,
+      gap: 20,
+    },
+    title: {
+      fontSize: 40,
+    },
+    count: {
+      fontSize: 24,
+    },
+  },
 };
 
 export const useWishListStyles = createUseStyles(wishListStyles, {

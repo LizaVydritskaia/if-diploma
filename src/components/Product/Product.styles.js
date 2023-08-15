@@ -62,6 +62,17 @@ const productStyles = {
       fontSize: 24,
     },
   },
+  '@media (max-width: 864px)': {
+    productBlock: {
+      width: 356,
+    },
+    imageBlock: {
+      marginBottom: 20,
+    },
+    productImage: {
+      width: 356,
+    },
+  },
 };
 
 export const useProductStyles = createUseStyles(productStyles, {

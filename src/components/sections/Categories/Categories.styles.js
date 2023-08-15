@@ -54,8 +54,6 @@ const categoriesStyles = {
       gap: 24,
     },
     categoryBlock: {
-      display: 'flex',
-      alignItems: 'center',
       gap: 20,
       width: 200,
       height: 100,
@@ -81,6 +79,45 @@ const categoriesStyles = {
     },
     iconBeauty: {
       width: 35,
+    },
+  },
+  '@media (max-width: 864px)': {
+    root: {
+      flexWrap: 'wrap',
+      columnGap: 24,
+      rowGap: 32,
+    },
+    categoryBlock: {
+      width: 352,
+      height: 164,
+      padding: '36px 48px',
+    },
+    text: {
+      fontSize: 36,
+    },
+    iconDress: {
+      width: 50,
+      height: 80,
+    },
+    iconTees: {
+      width: 88,
+      height: 80,
+    },
+    iconSwimwear: {
+      width: 46,
+      height: 80,
+    },
+    iconDenim: {
+      width: 36,
+      height: 80,
+    },
+    iconTop: {
+      width: 56,
+      height: 80,
+    },
+    iconBeauty: {
+      width: 56,
+      height: 80,
     },
   },
 };

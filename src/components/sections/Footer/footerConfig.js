@@ -1,6 +1,6 @@
 export const customerConfig = [
   {
-    id: 'customer service',
+    id: 'CUSTOMER SERVICE',
     headLink: 'CUSTOMER SERVICE',
     linkText: [
       'CONTACT',
@@ -15,7 +15,7 @@ export const customerConfig = [
 
 export const infoConfig = [
   {
-    id: 'info',
+    id: 'INFO',
     headLink: 'INFO',
     linkText: [
       'GIFT VOUCHERS',
@@ -29,7 +29,7 @@ export const infoConfig = [
 
 export const followConfig = [
   {
-    id: 'follow us',
+    id: 'FOLLOW US',
     headLink: 'FOLLOW US',
     linkText: [
       {
@@ -50,7 +50,7 @@ export const followConfig = [
 
 export const contactConfig = [
   {
-    id: 'contact us',
+    id: 'CONTACT US',
     headLink: 'CONTACT US',
     linkText: [
       'hello@modnikky.com',

@@ -57,6 +57,26 @@ const productWishListCardStyles = {
       width: 16,
     },
   },
+  '@media (max-width: 864px)': {
+    cardBlock: {
+      maxWidth: 810,
+    },
+    buttonsBlock: {
+      gap: 20,
+      bottom: 64,
+      right: 10,
+    },
+    button: {
+      gap: 8,
+      fontSize: 24,
+    },
+    shoppingCartIcon: {
+      width: 24,
+    },
+    removeIcon: {
+      width: 24,
+    },
+  },
 };
 
 export const useProductsWishListCardStyles = createUseStyles(

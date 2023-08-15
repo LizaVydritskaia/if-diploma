@@ -114,6 +114,44 @@ const updatesStyles = {
       margin: '80px auto 180px',
     },
   },
+  '@media (max-width: 864px)': {
+    rootMargin: {
+      marginTop: 140,
+    },
+    title: {
+      fontSize: 32,
+      marginBottom: 20,
+    },
+    text: {
+      fontSize: 24,
+      marginBottom: 70,
+    },
+    formWrapper: {
+      width: 754,
+      height: 40,
+    },
+    form: {
+      maxWidth: 754,
+      width: '100%',
+      height: 35,
+    },
+    input: {
+      height: 30,
+      fontSize: 24,
+
+      '&::placeholder': {
+        fontSize: 24,
+      },
+    },
+    button: {
+      height: 30,
+      fontSize: 24,
+    },
+    successMessage: {
+      fontSize: 20,
+      margin: '80px auto 180px',
+    },
+  },
 };
 
 export const useUpdatesStyles = createUseStyles(updatesStyles, {

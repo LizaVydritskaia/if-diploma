@@ -74,6 +74,41 @@ const instagramStyles = {
       height: 342,
     },
   },
+  '@media (max-width: 864px)': {
+    root: {
+      marginBottom: 100,
+    },
+    shopTextBlock: {
+      gap: 40,
+      marginBottom: 32,
+    },
+    text: {
+      fontSize: 18,
+    },
+    shop: {
+      gap: 8,
+    },
+    nextArrowIcon: {
+      width: 12,
+      height: 12,
+    },
+    images: {
+      flexDirection: 'column',
+      marginBottom: 70,
+    },
+    imageList: {
+      flexDirection: 'column',
+      flexWrap: 'no-wrap',
+    },
+    bigImage: {
+      width: 834,
+      height: 834,
+    },
+    image: {
+      width: 834,
+      height: 834,
+    },
+  },
 };
 
 export const useInstagramStyles = createUseStyles(instagramStyles, {

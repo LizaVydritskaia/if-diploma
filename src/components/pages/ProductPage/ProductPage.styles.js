@@ -160,6 +160,50 @@ const productPageStyles = {
       width: 24,
     },
   },
+  '@media (max-width: 864px)': {
+    productContent: {
+      flexDirection: 'column',
+      gap: 130,
+      marginBottom: 80,
+    },
+    images: {
+      '& img': {
+        width: '100%',
+        height: 1200,
+      },
+      '& img:last-child': {
+        display: 'none',
+      },
+    },
+    productInfo: {
+      marginTop: 0,
+      marginLeft: 80,
+    },
+    productPrice: {
+      marginBottom: 40,
+    },
+    buttons: {
+      '& button': {
+        height: 80,
+        fontSize: 28,
+
+        '&:first-child': {
+          width: 360,
+        },
+        '&:last-child': {
+          width: 78,
+        },
+      },
+    },
+    icon: {
+      width: 24,
+      height: 24,
+    },
+    iconFilled: {
+      width: 28,
+      height: 28,
+    },
+  },
 };
 
 export const useProductPageStyles = createUseStyles(productPageStyles, {

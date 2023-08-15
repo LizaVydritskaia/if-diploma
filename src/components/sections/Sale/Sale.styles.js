@@ -32,6 +32,18 @@ const saleStyles = {
       right: '-30px',
     },
   },
+  '@media (max-width: 864px)': {
+    productsSaleList: {
+      maxWidth: 762,
+      gap: 20,
+    },
+    arrow: {
+      width: 60,
+      height: 60,
+      top: '30%',
+      right: '-34px',
+    },
+  },
 };
 
 export const useSaleStyles = createUseStyles(saleStyles, { name: 'Sale' });
