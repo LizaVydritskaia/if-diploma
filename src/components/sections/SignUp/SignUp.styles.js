@@ -97,7 +97,7 @@ const signUpStyles = {
     },
     '&:hover::before': {
       cursor: 'pointer',
-      backgroundColor: 'var(--general-white)',
+      backgroundColor: 'var(--background-grey)',
     },
     '&::after': {
       content: '""',
