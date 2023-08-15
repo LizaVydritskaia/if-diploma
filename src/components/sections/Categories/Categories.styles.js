@@ -3,10 +3,9 @@ import { createUseStyles } from 'react-jss';
 const categoriesStyles = {
   root: {
     display: 'flex',
-    justifyContent: '',
+    justifyContent: 'space-between',
     alignItems: 'center',
     gap: 24,
-    paddingBottom: 180,
   },
   categoryBlock: {
     display: 'flex',
@@ -14,7 +13,7 @@ const categoriesStyles = {
     gap: 36,
     width: 390,
     height: 180,
-    backgroundColor: '#ede7f0',
+    backgroundColor: 'var(--pink)',
     padding: '48px 40px',
 
     '&:hover': {
@@ -24,7 +23,7 @@ const categoriesStyles = {
   text: {
     fontSize: 48,
     fontWeight: 400,
-    color: '#000f08',
+    color: 'var(--general-black)',
   },
   iconDress: {
     width: 64,
@@ -49,6 +48,77 @@ const categoriesStyles = {
   iconBeauty: {
     width: 70,
     height: 100,
+  },
+  '@media (max-width: 1600px)': {
+    root: {
+      gap: 24,
+    },
+    categoryBlock: {
+      gap: 20,
+      width: 200,
+      height: 100,
+      padding: '24px 22px',
+    },
+    text: {
+      fontSize: 24,
+    },
+    iconDress: {
+      width: 32,
+    },
+    iconTees: {
+      width: 44,
+    },
+    iconSwimwear: {
+      width: 32,
+    },
+    iconDenim: {
+      width: 28,
+    },
+    iconTop: {
+      width: 40,
+    },
+    iconBeauty: {
+      width: 35,
+    },
+  },
+  '@media (max-width: 864px)': {
+    root: {
+      flexWrap: 'wrap',
+      columnGap: 24,
+      rowGap: 32,
+    },
+    categoryBlock: {
+      width: 352,
+      height: 164,
+      padding: '36px 48px',
+    },
+    text: {
+      fontSize: 36,
+    },
+    iconDress: {
+      width: 50,
+      height: 80,
+    },
+    iconTees: {
+      width: 88,
+      height: 80,
+    },
+    iconSwimwear: {
+      width: 46,
+      height: 80,
+    },
+    iconDenim: {
+      width: 36,
+      height: 80,
+    },
+    iconTop: {
+      width: 56,
+      height: 80,
+    },
+    iconBeauty: {
+      width: 56,
+      height: 80,
+    },
   },
 };
 

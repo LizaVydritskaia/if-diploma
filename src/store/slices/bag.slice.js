@@ -7,12 +7,29 @@ export const bagSlice = createSlice({
   initialState: initialState.bag,
   reducers: {
     addProductToBag: (state, action) => {
-      state.productsInBag.push(action.payload);
+      const productInBag = state.productsInBag.find(
+        (product) => product.id === action.payload.id,
+      );
+
+      if (productInBag) {
+        productInBag.quantity++;
+      } else {
+        state.productsInBag.push({ ...action.payload, quantity: 1 });
+      }
     },
-    deleteProductFromBag: (state, action) => {
+    removeProductFromBag: (state, action) => {
       state.productsInBag = state.productsInBag.filter(
         (product) => product.id !== action.payload,
       );
+    },
+    quantityDecrement: (state, action) => {
+      const productInBag = state.productsInBag.find(
+        (product) => product.id === action.payload,
+      );
+
+      if (productInBag) {
+        productInBag.quantity--;
+      }
     },
     clearBag: (state) => {
       state.productsInBag.splice(0, state.productsInBag.length);
@@ -20,7 +37,7 @@ export const bagSlice = createSlice({
     addIdToList: (state, action) => {
       state.productsIdList.push(action.payload);
     },
-    deleteIdFromList: (state, action) => {
+    removeIdFromList: (state, action) => {
       state.productsIdList = state.productsIdList.filter(
         (item) => item !== action.payload,
       );
@@ -36,10 +53,11 @@ export const bagSlice = createSlice({
 
 export const {
   addProductToBag,
-  deleteProductFromBag,
+  removeProductFromBag,
+  quantityDecrement,
   clearBag,
   addIdToList,
-  deleteIdFromList,
+  removeIdFromList,
   setSuccessMessage,
   setShowMessage,
 } = bagSlice.actions;

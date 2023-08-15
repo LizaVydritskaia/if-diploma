@@ -16,6 +16,7 @@ import {
 } from '../../store/slices/updates.slice';
 
 //components
+import { Button } from '../Button';
 import { TextMessage } from '../TextMessage';
 
 //styles
@@ -75,9 +76,9 @@ export const Updates = () => {
                 name="email"
                 type="email"
               />
-              <button type="submit" className={classes.button}>
+              <Button type="submit" className={classes.button}>
                 JOIN
-              </button>
+              </Button>
             </form>
           </span>
         </div>

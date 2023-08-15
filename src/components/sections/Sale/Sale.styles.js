@@ -4,7 +4,7 @@ const saleStyles = {
   productsSaleList: {
     maxWidth: 2466,
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     gap: 24,
     position: 'relative',
   },
@@ -15,6 +15,34 @@ const saleStyles = {
     top: '30%',
     right: '-90px',
     zIndex: 1,
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
+  },
+  '@media (max-width: 1600px)': {
+    productsSaleList: {
+      maxWidth: 1364,
+      gap: 10,
+    },
+    arrow: {
+      width: 60,
+      height: 60,
+      top: '25%',
+      right: '-30px',
+    },
+  },
+  '@media (max-width: 864px)': {
+    productsSaleList: {
+      maxWidth: 762,
+      gap: 20,
+    },
+    arrow: {
+      width: 60,
+      height: 60,
+      top: '30%',
+      right: '-34px',
+    },
   },
 };
 

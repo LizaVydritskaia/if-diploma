@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 //slices
 import { addProductToWishList } from '../../store/slices/wishList.slice';
+import { addProductToBag } from '../../store/slices/bag.slice';
 
 //components
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 
 //styles
@@ -32,10 +34,26 @@ export const ProductSaleBlock = ({
     dispatch(addProductToWishList(productState));
   };
 
+  const handleAddProductToBag = (productState) => {
+    dispatch(addProductToBag(productState));
+  };
+
   return (
     <div className={classes.productSaleBlock}>
       <div className={classes.imageBlock}>
-        <img className={classes.productSaleImage} src={image} alt={alt} />
+        <div>
+          <img className={classes.productSaleImage} src={image} alt={alt} />
+          <div className={classes.hoverBlock}>
+            <Button
+              type="button"
+              className={classes.hoverButton}
+              onClick={() => handleAddProductToBag(productState)}
+            >
+              ADD TO BAG
+            </Button>
+          </div>
+        </div>
+
         {isProductInWishList ? (
           <Icon
             className={classes.likeIconFilled}

@@ -14,8 +14,17 @@ const searchResultsStyles = {
   messageBlock: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     textAlign: 'center',
+  },
+  '@media (max-width: 1600px)': {
+    productsList: {
+      columnGap: 17,
+      rowGap: 60,
+    },
+    messageBlock: {
+      fontSize: 24,
+    },
   },
 };
 

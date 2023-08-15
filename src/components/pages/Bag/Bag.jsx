@@ -14,13 +14,14 @@ import { useOrderProductsMutation } from '../../../services/api/order';
 //slices
 import {
   clearBag,
-  deleteIdFromList,
-  deleteProductFromBag,
+  removeIdFromList,
+  removeProductFromBag,
   setShowMessage,
   setSuccessMessage,
 } from '../../../store/slices/bag.slice';
 
 //components
+import { Button } from '../../Button';
 import { Footer } from '../../sections/Footer';
 import { Header } from '../../sections/Header';
 import { Line } from '../../Line';
@@ -43,14 +44,14 @@ export const Bag = () => {
   const showMessage = useSelector((state) => state.bag.showMessage);
   const successMessage = useSelector((state) => state.bag.successMessage);
 
-  const totalPrice = productsInBag.reduce((acc, product) => {
-    acc += +product.price.value;
-    return acc;
-  }, 0);
+  const totalPrice = productsInBag.reduce(
+    (acc, product) => acc + +product.price.value * product.quantity,
+    0,
+  );
 
   const handleDeleteProductFromBag = (id) => {
-    dispatch(deleteProductFromBag(id));
-    dispatch(deleteIdFromList(id));
+    dispatch(removeProductFromBag(id));
+    dispatch(removeIdFromList(id));
   };
 
   const handleOrderProducts = () => {
@@ -100,6 +101,9 @@ export const Bag = () => {
                     productPrice={`${product.price.currency} $${product.price.value}`}
                     productColor={product.color.name}
                     sizesArray={product.availableSizes}
+                    path={product.id}
+                    linkState={{ ...product }}
+                    productQuantity={product.quantity}
                     onClick={() => handleDeleteProductFromBag(product.id)}
                   />
                   <Line />
@@ -109,14 +113,14 @@ export const Bag = () => {
           </div>
           <div className={classes.paymentBlock}>
             <div className={classes.totalPrice}>Total USD ${totalPrice}</div>
-            <button
+            <Button
               type="button"
               className={classes.button}
               disabled={productsInBag.length < 1}
               onClick={handleOrderProducts}
             >
               PROCEED TO CHECKOUT
-            </button>
+            </Button>
             <img
               className={classes.paymentIcon}
               src={paymentIcon}
@@ -126,13 +130,13 @@ export const Bag = () => {
         </>
       )}
       {showMessage ? (
-        <button
+        <Button
           type="button"
           className={classNames(classes.button, classes.backButton)}
           onClick={navigateToHomePage}
         >
           BACK TO SHOPPING
-        </button>
+        </Button>
       ) : null}
       <Footer />
     </>

@@ -3,13 +3,13 @@ import { createPortal } from 'react-dom';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-//slices
-import { changeStatus } from '../../../store/slices/auth.slice';
-import { setShowSearchModal } from '../../../store/slices/search.slice';
-
 //constants
 import { authStatuses } from '../../../services/constants/authStatuses';
 import { PATH } from '../../../services/constants/paths';
+
+//slices
+import { changeStatus } from '../../../store/slices/auth.slice';
+import { setShowSearchModal } from '../../../store/slices/search.slice';
 
 //components
 import { Icon } from '../../Icon';
@@ -17,6 +17,7 @@ import { SearchModal } from '../../SearchModal';
 
 //styles
 import { useHeaderStyles } from './Header.styles';
+import classNames from 'classnames';
 
 export const Header = () => {
   const classes = useHeaderStyles();
@@ -59,6 +60,14 @@ export const Header = () => {
   return (
     <>
       <header className={classes.root}>
+        <Icon
+          className={
+            location.pathname !== PATH.index
+              ? classes.burgerMenuIconBlack
+              : classes.burgerMenuIcon
+          }
+          hrefIconName="#burger-menu"
+        />
         <div className={classes.menu}>
           <span
             className={
@@ -109,48 +118,61 @@ export const Header = () => {
               hrefIconName="#search"
             />
             <span
-              className={
+              className={classNames(
+                classes.hiddenText,
                 location.pathname !== PATH.index
                   ? classes.textBlack
-                  : classes.text
-              }
+                  : classes.text,
+              )}
             >
               SEARCH
             </span>
           </div>
           {loggedIn ? (
             <span
-              className={
+              className={classNames(
+                classes.hiddenText,
                 location.pathname !== PATH.index
                   ? classes.textBlack
-                  : classes.text
-              }
+                  : classes.text,
+              )}
               onClick={SignOut}
             >
               SIGN OUT
             </span>
           ) : (
             <span
-              className={
+              className={classNames(
+                classes.hiddenText,
                 location.pathname !== PATH.index
                   ? classes.textBlack
-                  : classes.text
-              }
+                  : classes.text,
+              )}
               onClick={SignIn}
             >
               SIGN IN
             </span>
           )}
-          <span
-            className={
-              location.pathname !== PATH.index
-                ? classes.textBlack
-                : classes.text
-            }
-            onClick={openBag}
-          >
-            BAG <span>({bagProductsCount.length})</span>
-          </span>
+          <div onClick={openBag}>
+            <Icon
+              className={
+                location.pathname !== PATH.index
+                  ? classes.cartBlack
+                  : classes.cart
+              }
+              hrefIconName="#shopping-cart"
+            />
+            <span
+              className={classNames(
+                classes.hiddenText,
+                location.pathname !== PATH.index
+                  ? classes.textBlack
+                  : classes.text,
+              )}
+            >
+              BAG <span>({bagProductsCount.length})</span>
+            </span>
+          </div>
           {location.pathname === PATH.wishList ? (
             <Icon
               className={classes.wishListFilled}

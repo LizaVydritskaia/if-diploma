@@ -30,12 +30,48 @@ const productStyles = {
     top: 14,
     right: 16,
     zIndex: 1,
-    fill: '#fff',
+    fill: 'var(--general-white)',
   },
   price: {
     fontSize: 40,
     fontWeight: 700,
-    color: '#000f08',
+    color: 'var(--general-black)',
+  },
+  '@media (max-width: 1600px)': {
+    productBlock: {
+      width: 320,
+    },
+    imageBlock: {
+      marginBottom: 20,
+    },
+    productImage: {
+      width: 320,
+    },
+    likeIcon: {
+      width: 32,
+      height: 56,
+      top: 0,
+      right: 16,
+    },
+    likeIconFilled: {
+      width: 40,
+      top: '-8px',
+      right: 12,
+    },
+    price: {
+      fontSize: 24,
+    },
+  },
+  '@media (max-width: 864px)': {
+    productBlock: {
+      width: 356,
+    },
+    imageBlock: {
+      marginBottom: 20,
+    },
+    productImage: {
+      width: 356,
+    },
   },
 };
 

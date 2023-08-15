@@ -1,6 +1,7 @@
 import React from 'react';
 
 //components
+import { Button } from '../../Button';
 import { Header } from '../Header';
 
 //styles
@@ -18,7 +19,9 @@ export const TopSection = () => {
           Our easiest chuck-on-and-go staples come with a serious style heritage
           that’s liberating, sexy, comfy and supremely cool.
         </p>
-        <button className={classes.button}>SHOP NEW ARRIVALS</button>
+        <Button type="button" className={classes.button}>
+          SHOP NEW ARRIVALS
+        </Button>
       </div>
     </section>
   );

@@ -14,8 +14,23 @@ const catalogStyles = {
   messageBlock: {
     fontSize: 40,
     fontWeight: 400,
-    color: '#8c8c8c',
+    color: 'var(--text-general-grey)',
     textAlign: 'center',
+  },
+  '@media (max-width: 1600px)': {
+    productsList: {
+      columnGap: 17,
+      rowGap: 60,
+    },
+    messageBlock: {
+      fontSize: 24,
+    },
+  },
+  '@media (max-width: 864px)': {
+    productsList: {
+      columnGap: 18,
+      rowGap: 48,
+    },
   },
 };
 
