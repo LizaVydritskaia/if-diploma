@@ -3,13 +3,13 @@ import { createPortal } from 'react-dom';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-//slices
-import { changeStatus } from '../../../store/slices/auth.slice';
-import { setShowSearchModal } from '../../../store/slices/search.slice';
-
 //constants
 import { authStatuses } from '../../../services/constants/authStatuses';
 import { PATH } from '../../../services/constants/paths';
+
+//slices
+import { changeStatus } from '../../../store/slices/auth.slice';
+import { setShowSearchModal } from '../../../store/slices/search.slice';
 
 //components
 import { Icon } from '../../Icon';

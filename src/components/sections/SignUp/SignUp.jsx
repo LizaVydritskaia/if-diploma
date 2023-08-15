@@ -2,12 +2,12 @@ import React, { useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-//slices
-import { changeStatus } from '../../../store/slices/auth.slice';
-
 //constants
 import { authStatuses } from '../../../services/constants/authStatuses';
 import { PATH } from '../../../services/constants/paths';
+
+//slices
+import { changeStatus } from '../../../store/slices/auth.slice';
 
 //components
 import { Button } from '../../Button';

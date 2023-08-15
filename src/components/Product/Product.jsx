@@ -40,7 +40,10 @@ export const Product = ({
           <img className={classes.productImage} src={imageUrl} alt={alt} />
         </NavLink>
         {isProductInWishList ? (
-          <Icon className={classes.likeIconFilled} hrefIconName="#like-filled" />
+          <Icon
+            className={classes.likeIconFilled}
+            hrefIconName="#like-filled"
+          />
         ) : (
           <Icon
             className={classes.likeIcon}
